@@ -72,6 +72,7 @@ main{
  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* optional: adds subtle shadow */
 }
 
+
   .special-txt {
     font-family: 'Geraldica';
     color: #d60029;
@@ -88,7 +89,7 @@ main{
   }
   
   /* LOGO */
-  .nav-logo{
+.nav-logo{
     padding-left:2%;
   }
   .nav-logo a{
@@ -144,15 +145,112 @@ font-family:'VisbyExtrabold';
 transform: scale(1.1);
 }
 
-h1.home-title {
+h1.project-title {
   font-family: 'VisbyHeavy';
   text-align: center;
   color: #333;
   font-size: clamp(2rem, 6vw, 5em);
-  margin-top:10%;
+  margin-top: 10%;
 }
 
+.page-descript{
+  margin-top:2%;
+  width: 50%;
+  margin-left:25%;
+}
 
+.page-descript p{
+  font-size:clamp(1rem, 2vw, 1.5rem);
+}
+
+.project-intro{
+  text-align: center;
+  margin-top:5%;
+  font-size:clamp(1rem,5vw,2.8rem);
+}
+
+.project-intro span{
+  color:#d60029;
+
+}
+
+  .embeaded-click {
+    position: relative;
+    width: 30%;
+    margin: 14% 0 10% 5%;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #eee7dd;
+
+    /* Initial state */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.3s ease, opacity 0.6s ease;
+    cursor: pointer;
+  }
+
+  /* When visible in viewport */
+  .embeaded-click.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Hover effect */
+  .embeaded-click:hover {
+    transform: translateY(-8px);
+  }
+
+  .embeaded-click img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .overlay-text {
+    position: absolute;
+    bottom: 1%;
+    color: #333;
+    padding: 0.5em 1em;
+    font-family: 'VisbySemibold', sans-serif;
+    font-size: 1.3rem;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .left-text {
+    left: 12px;
+  }
+
+  .right-text {
+    right: 12px;
+  }
+.embeaded-click img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 1%;
+  color: #333;
+  padding: 0.5em 1em;
+  font-family: 'VisbySemibold';
+  font-size: 1.3rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.left-text {
+  left: 12px;
+}
+
+.right-text {
+  right: 12px;
+}
 
 
 /* ============ MEDIA QUERIES ============ */
@@ -168,10 +266,9 @@ h1.home-title {
   .nav-links li a {
     font-size: 0.8rem;
   }
-  main{
+main{
   padding-top:17%;
 }
-
 }
 
 @media (max-width: 768px) {
@@ -204,7 +301,7 @@ h1.home-title {
     padding: 1rem;
     transition: max-height 0.4s ease-in, padding 0.4s ease-in;
   }
-    h1.home-title{
+    h1.project-title{
     font-size: 3.5rem;
   }
 }
@@ -220,7 +317,7 @@ h1.home-title {
   .nav-logo img{
     width: 80%;
   }
-    h1.home-title{
+    h1.project-title{
     font-size: 2.8rem;
   }
 }
@@ -257,7 +354,7 @@ h1.home-title {
 }
 
 @media (min-width: 900px) {
-    h1.home-title {
+    h1.project-title {
     font-size: 3.8em !important;
   }
 }
@@ -285,7 +382,7 @@ h1.home-title {
     margin: 0 auto;
   }
 
-    h1.home-title {
+    h1.project-title {
     font-size: 5em !important;
   }
 
@@ -299,7 +396,7 @@ h1.home-title {
   }
 }
 @media (max-width: 599px) {
-  h1.home-title {
+  h1.project-title {
     font-size: 2rem !important;
   }
 }

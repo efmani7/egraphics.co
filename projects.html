@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>egraphics</title>
+<link rel="stylesheet" href="styles/projectstyle.css" />
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Place this inside .nav-container, before .nav-icons -->
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+
+            <div class="nav-logo"> <a href="index.html"><img src="images/egraphics/egraphics-button.svg" alt=""> </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">about</a></li>
+                <li><a href="projects.html">projects</a></li>
+                <li><a href="#">Inquire</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <h1 class="project-title">Stand out with purpose.<br> Lead with <span class="special-txt">style.</span></h1>
+        <div class="page-descript">
+            <p>I get it—your energy is better spent building your business than stressing over design. That’s where I
+                come
+                in. I’ll handle the creative heavy lifting and deliver a strategic, iconic visual identity that grabs
+                attention, draws in your ideal audience, and leaves the competition watching in envy.</p>
+        </div>
+<h2 class="project-intro">My strategic design approach <span style="color:#002547;">+</span> your vision <br>
+<span>=</span> A brand people will envy.</h2>
+
+<div class="embeaded-click">
+  <a href="embeaded.html">
+    <img src="images/embeaded/embeaded-img-link.jpg" alt="">
+         <div class="overlay-text left-text">Embeaded</div>
+    <div class="overlay-text right-text">View Project</div>
+  </a>
+</div>
+
+    </main>
+
+
+
+    <!--Nav Menu Script -->
+    <script>
+        const toggleBtn = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        toggleBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+    <script>
+        const navLinks = document.querySelector('.nav-links');
+        const toggleBtn = document.querySelector('.nav-toggle');
+
+        toggleBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when any nav link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+     <!--Fade in Event listner -->
+<script>
+  // JS: Intersection Observer to add 'visible' class when scrolled into view
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // animate once
+        }
+      });
+    }, {
+      threshold: 0.1 // triggers when 10% visible
+    });
+
+    document.querySelectorAll('.embeaded-click').forEach(el => {
+      observer.observe(el);
+    });
+  });
+</script>
+
+    <script>
+        function adjustMainPadding() {
+            const navbar = document.querySelector('.navbar');
+            const main = document.querySelector('main');
+
+            if (navbar && main) {
+                const navHeight = navbar.offsetHeight;
+                main.style.paddingTop = `${navHeight}px`;
+            }
+        }
+
+        // Run on load and on resize
+        window.addEventListener('DOMContentLoaded', adjustMainPadding);
+        window.addEventListener('resize', adjustMainPadding);
+    </script>
+
+</body>
+
+</html>
