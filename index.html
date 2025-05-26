@@ -8,70 +8,53 @@
 
 <body>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <!-- Place this inside .nav-container, before .nav-icons -->
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                ☰
-            </button>
+  <nav class="navbar">
+    <div class="nav-container">
+      <!-- Place this inside .nav-container, before .nav-icons -->
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        ☰
+      </button>
 
-            <div class="nav-logo"> <img src="images/egraphics/egraphics-button.svg" alt=""> </div>
-            <ul class="nav-links">
-                <li><a href="#">about</a></li>
-                <li><a href="#">portfolio</a></li>
-                <li><a href="#">Inquire</a></li>
-                </ul>
-        </div>
-    </nav>
-    <main>
- <h1 class="home-title">Helping <span class="special-txt">brands</span> dicover their true potetial <br> through my creative strategy. </h1>
-</main>
-
-
-
+      <div class="nav-logo"> <img src="images/egraphics/egraphics-button.svg" alt=""> </div>
+      <ul class="nav-links">
+        <li><a href="#">about</a></li>
+        <li><a href="#">portfolio</a></li>
+        <li><a href="#">Inquire</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <h1 class="home-title">Helping <span class="special-txt">brands</span> dicover their true potential <br> through my
+      creative strategy. </h1>
+  </main>
 
 
 
+  <!--Nav Menu Script -->
+  <script>
+    const toggleBtn = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!--Nav Menu Script -->
-    <script>
-        const toggleBtn = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        toggleBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
-    
-    <script>
-  const navLinks = document.querySelector('.nav-links');
-  const toggleBtn = document.querySelector('.nav-toggle');
-
-  toggleBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-
-  // Close menu when any nav link is clicked
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
     });
-  });
-</script>
+  </script>
+
+  <script>
+    const navLinks = document.querySelector('.nav-links');
+    const toggleBtn = document.querySelector('.nav-toggle');
+
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when any nav link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
 
 
 </body>

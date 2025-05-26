@@ -69,40 +69,40 @@ main{
   z-index: 1000;
   }
 
-.home-title{
-  font-family: 'VisbyHeavy';
-  text-align: center;
-  color: #333;
-  font-size:4em;
-}
-.special-txt {
-font-family: 'Geraldica';
-color: #d60029;
-}
-.nav-container {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0.75rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-}
+  .special-txt {
+    font-family: 'Geraldica';
+    color: #d60029;
+  }
+  .nav-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  /* LOGO */
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    height:2.5em;
+    flex-shrink: 0;
+    padding-left:2%;
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-logo svg,
+  .nav-logo img {
+    width: auto;
+    height: clamp(100%, 4vw, 2.5em)
+  }
 
-/* LOGO */
-.nav-logo {
-  display: flex;
-  align-items: center;
-  height:2.5em;
-  flex-shrink: 0;
+.nav-logo:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
-
-.nav-logo svg,
-.nav-logo img {
-  width: auto;
-  height: clamp(100%, 4vw, 32px)
-}
-
 
 /* HAMBURGER MENU BUTTON */
 .nav-toggle {
@@ -121,19 +121,32 @@ color: #d60029;
   gap: 1.5rem;
   justify-content: center;
   grid-column: 2;
+  padding-right:5%;
 }
 
 .nav-links li a {
   text-decoration: none;
   color: #333;
   font-size: 1.2rem;
-  transition: color 0.2s;
+  transition: color 0.2s, transform 0.3s ease;
 font-family:'VisbyExtrabold';
 }
 
 .nav-links li a:hover {
-  color: #0071e3;
+  color: #d60029;
+transform: scale(1.1);
 }
+
+h1.home-title {
+  font-family: 'VisbyHeavy';
+  text-align: center;
+  color: #333;
+  font-size: clamp(2rem, 6vw, 5em);
+  margin-top:10%;
+}
+
+
+
 
 /* ============ MEDIA QUERIES ============ */
 
@@ -148,16 +161,8 @@ font-family:'VisbyExtrabold';
   .nav-links li a {
     font-size: 0.8rem;
   }
+
 }
-
-@media (max-width: 768px) {
-  .nav-container {
-    grid-template-columns: auto 1fr;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
 
 @media (max-width: 768px) {
   .nav-links {
@@ -177,15 +182,24 @@ font-family:'VisbyExtrabold';
     font-size: 0.9rem;
     
   }
+  .nav-container {
+    grid-template-columns: auto 1fr;
+  }
 
+  .nav-toggle {
+    display: block;
+  }
   .nav-links.active {
     max-height: 500px; /* enough height */
     padding: 1rem;
     transition: max-height 0.4s ease-in, padding 0.4s ease-in;
   }
+    h1.home-title{
+    font-size: 3.5rem;
+  }
 }
 
-}
+
                                                   /* MEDIA QURIES */
 /* Tablets */
 @media (min-width: 600px) {
@@ -196,7 +210,9 @@ font-family:'VisbyExtrabold';
   .nav-logo img{
     width: 80%;
   }
-
+    h1.home-title{
+    font-size: 2.8rem;
+  }
 }
 
 /* Grid utilities */
@@ -230,6 +246,11 @@ font-family:'VisbyExtrabold';
   }
 }
 
+@media (min-width: 900px) {
+    h1.home-title {
+    font-size: 3.8em !important;
+  }
+}
 @media (max-width: 991px) {
   .nav-links li a {
     font-size: 1rem;
@@ -254,6 +275,10 @@ font-family:'VisbyExtrabold';
     margin: 0 auto;
   }
 
+    h1.home-title {
+    font-size: 5em !important;
+  }
+
 
 /* Hidden by default */
 .nav-toggle {
@@ -263,3 +288,10 @@ font-family:'VisbyExtrabold';
     font-size: 3rem;
   }
 }
+@media (max-width: 599px) {
+  h1.home-title {
+    font-size: 2rem !important;
+  }
+}
+
+
