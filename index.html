@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>egraphics</title>
+<link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Place this inside .nav-container, before .nav-icons -->
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+
+            <div class="nav-logo"> <img src="images/egraphics/egraphics-button.svg" alt=""> </div>
+            <ul class="nav-links">
+                <li><a href="#">about</a></li>
+                <li><a href="#">portfolio</a></li>
+                <li><a href="#">Inquire</a></li>
+                </ul>
+        </div>
+    </nav>
+    <!--Nav Menu Script-->
+    <script>
+        const toggleBtn = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        toggleBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    
+    <script>
+  const navLinks = document.querySelector('.nav-links');
+  const toggleBtn = document.querySelector('.nav-toggle');
+
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // Close menu when any nav link is clicked
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+</script>
+
+
+</body>
+
+</html>
