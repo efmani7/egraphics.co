@@ -2,6 +2,46 @@
 @font-face {
   font-family: "VisbySemibold"; /* <-- This is what you should use */
   src: url(../fonts/visby/VisbySemibold.woff2);
+}
+@font-face {
+  font-family: "Visbybold"; /* <-- This is what you should use */
+  src: url(../fonts/visby/Visbybold.woff2);
+
+}
+@font-face {
+  font-family: "VisbyExtrabold"; /* <-- This is what you should use */
+  src: url(../fonts/visby/VisbyExtrabold.woff2);
+
+}
+@font-face {
+  font-family: "VisbyMedium"; /* <-- This is what you should use */
+  src: url(../fonts/visby/VisbyMedium.woff2);
+
+}
+@font-face {
+  font-family: "VisbyRegular"; /* <-- This is what you should use */
+  src: url(../fonts/visby/VisbyRegular.woff2);
+
+}
+
+@font-face {
+  font-family: "VisbyHeavy"; /* <-- This is what you should use */
+  src: url(../fonts/visby/VisbyHeavy.woff2);
+
+}
+
+@font-face {
+  font-family: "Geraldica"; /* <-- This is what you should use */
+  src: url(../fonts/Geraldica.woff2);
+
+}
+@font-face {
+  font-family: "Dashing"; /* <-- This is what you should use */
+  src: url(../fonts/Dashing.woff2);
+
+}@font-face {
+  font-family: "ViableLogic"; /* <-- This is what you should use */
+  src: url(../fonts/ViableLogic.woff2);
 
 }
 
@@ -14,9 +54,12 @@
 
 body {
   font-family:'VisbySemibold';
-  background: #ffeeff;
+  background: #f8f8f8;
+  min-width:345px;
 }
-
+main{
+  padding-top:10%;
+}
 /* NAVIGATION BAR */
 .navbar {
   background-color: #f8f8f8;
@@ -24,8 +67,18 @@ body {
   width: 100%;
   top: 0;
   z-index: 1000;
-}
+  }
 
+.home-title{
+  font-family: 'VisbyHeavy';
+  text-align: center;
+  color: #333;
+  font-size:4em;
+}
+.special-txt {
+font-family: 'Geraldica';
+color: #d60029;
+}
 .nav-container {
   max-width: 100%;
   margin: 0 auto;
@@ -75,7 +128,7 @@ body {
   color: #333;
   font-size: 1.2rem;
   transition: color 0.2s;
-font-family:'VisbySemibold';
+font-family:'VisbyExtrabold';
 }
 
 .nav-links li a:hover {
