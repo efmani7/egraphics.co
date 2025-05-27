@@ -55,10 +55,10 @@
 body {
   font-family:'VisbySemibold';
   background: #f8f8f8;
-  min-width:345px;
+  min-width:400px;
 }
 main{
-  padding-top:15%;
+  padding-top:10%;
 }
 /* NAVIGATION BAR */
 .navbar {
@@ -71,7 +71,6 @@ main{
   z-index: 1000;
  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* optional: adds subtle shadow */
 }
-
 
   .special-txt {
     font-family: 'Geraldica';
@@ -89,7 +88,7 @@ main{
   }
   
   /* LOGO */
-.nav-logo{
+  .nav-logo{
     padding-left:2%;
   }
   .nav-logo a{
@@ -145,97 +144,80 @@ font-family:'VisbyExtrabold';
 transform: scale(1.1);
 }
 
-h1.project-title {
-  font-family: 'VisbyHeavy';
-  text-align: center;
-  color: #333;
-  font-size: clamp(2rem, 6vw, 5em);
-  margin-top: 10%;
-}
-
-.page-descript{
-  margin-top:2%;
-  width: 50%;
-  margin-left:25%;
-}
-
-.page-descript p{
-  font-size:clamp(1rem, 2vw, 1.5rem);
-}
-
-.project-intro{
-  text-align: center;
-  margin-top:5%;
-  font-size:clamp(1rem,5vw,2.8rem);
-}
-
-.project-intro span{
-  color:#d60029;
-
-}
-.projects-row {
+.project-section {
+  padding: 2rem 2%;
+  background-color: #f8f8f8;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  margin-bottom: 12%;
+}
+
+.project-wrapper {
+  display: flex;
+  max-width: 100%;
+  width: 100%;
+  gap: 1rem;
   align-items: flex-start;
-  padding: 0 5%;
-  gap: 2rem;
+  flex-wrap: nowrap; /* Keep side-by-side as long as possible */
 }
 
-/* Shared project card class */
-.project-card-click {
-  position: relative;
-  width: 45%;
-  border-radius: 12px;
-  overflow: hidden;
-  background-color: #eee7dd;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: transform 0.3s ease, opacity 0.6s ease;
-  cursor: pointer;
-  margin-top:15%;
+/* LEFT COLUMN (Title) */
+.project-title {
+  flex: 2 1 25%; /* Shrinks down when needed */
+  min-width: 180px; /* Prevents it from becoming too small */
+  width:200px;
+
 }
 
-/* When scrolled into view */
-.project-card-click.visible {
-  opacity: 1;
-  transform: translateY(0);
+.project-title h2 {
+  font-family: 'VisbyExtrabold', sans-serif;
+  font-size:clamp(2em, 4.5vw,4.5em);
+  line-height: 1.1;
+  margin: 0;
+  color: #1a1a1a;
+  
 }
 
-/* Hover effect */
-.project-card-click:hover {
-  transform: translateY(-8px);
+/* RIGHT COLUMN (Description) */
+.project-description {
+  flex: 1 1 70%; /* Grows to fill remaining space */
+  font-family: 'VisbyMedium', sans-serif;
+  font-size: clamp(.9rem, 4vw, 1.2rem);
+  color: #333;
+  line-height: 1.7;
+}
+.about-brand {
+  flex: 1 1 70%; /* Grows to fill remaining space */
+  font-family: 'VisbyMedium', sans-serif;
+  font-size: clamp(.7rem, 4vw, 1rem);
+  color: #333;
+  line-height: 1.7;
+}
+.project-description .project-services {
+  font-family: 'VisbyMedium', sans-serif;
+  margin-bottom: 1.5rem;
+  color: #111;
+  font-size: clamp(1rem, 2vw, 1.3rem);
 }
 
-.project-card-click img {
+.port-branding {
   width: 100%;
   height: auto;
-  display: block;
-  object-fit: cover;
-  transition: 0.5s ease;
 }
 
-/* Overlay text */
-.overlay-text {
-  position: absolute;
-  bottom: 1%;
-  color: #333;
-  padding: 0.5em 1em;
-  font-family: 'VisbySemibold', sans-serif;
-  font-size: 1.3rem;
-  z-index: 2;
-  pointer-events: none;
+.port-branding img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block; /* Removes extra space below image */
 }
-
-.left-text {
-  left: 12px;
+.port-branding-txt{
+  padding: 8%;
+  padding-left: 22%;
+  padding-right:22%;
+  font-size: clamp(0.6rem,4vw, 1rem);
+  text-align: center;
 }
-
-.right-text {
-  right: 12px;
-}
-
-
 /* ============ MEDIA QUERIES ============ */
 
 /* Mobile-first (small screens) */
@@ -249,9 +231,10 @@ h1.project-title {
   .nav-links li a {
     font-size: 0.8rem;
   }
-main{
+  main{
   padding-top:17%;
 }
+
 }
 
 @media (max-width: 768px) {
@@ -284,9 +267,31 @@ main{
     padding: 1rem;
     transition: max-height 0.4s ease-in, padding 0.4s ease-in;
   }
-    h1.project-title{
+    h1.home-title{
     font-size: 3.5rem;
   }
+ .project-wrapper {
+    flex-direction: column;
+  }
+
+  .project-title,
+  .project-description {
+    width: 100%;
+  }
+
+  .project-title h2 {
+    text-align: left;
+    font-size: clamp(2rem, 6vw, 4rem);
+  }
+
+  .project-description {
+    font-size: 1rem;
+  }
+
+  .project-description .project-services {
+    font-size: 1.1rem;
+  }
+
 }
 
 
@@ -300,7 +305,7 @@ main{
   .nav-logo img{
     width: 80%;
   }
-    h1.project-title{
+    h1.home-title{
     font-size: 2.8rem;
   }
 }
@@ -337,7 +342,7 @@ main{
 }
 
 @media (min-width: 900px) {
-    h1.project-title {
+    h1.home-title {
     font-size: 3.8em !important;
   }
 }
@@ -365,7 +370,7 @@ main{
     margin: 0 auto;
   }
 
-    h1.project-title {
+    h1.home-title {
     font-size: 5em !important;
   }
 
@@ -379,9 +384,7 @@ main{
   }
 }
 @media (max-width: 599px) {
-  h1.project-title {
+  h1.home-title {
     font-size: 2rem !important;
   }
 }
-
-

@@ -34,15 +34,45 @@
         </div>
 <h2 class="project-intro">My strategic design approach <span style="color:#002547;">+</span> your vision <br>
 <span>=</span> A brand people will envy.</h2>
+<div class="projects-row">
+  <!-- Embeaded -->
+  <div class="project-card-click">
+    <a href="embeaded.html">
+      <img src="images/embeaded/embeaded-img-link.jpg" alt="">
+      <div class="overlay-text left-text">Embeaded</div>
+      <div class="overlay-text right-text">View Project</div>
+    </a>
+  </div>
 
-<div class="embeaded-click">
-  <a href="embeaded.html">
-    <img src="images/embeaded/embeaded-img-link.jpg" alt="">
-         <div class="overlay-text left-text">Embeaded</div>
-    <div class="overlay-text right-text">View Project</div>
-  </a>
+  <!-- Daily Bites -->
+  <div class="project-card-click">
+    <a href="dailybites.html">
+      <img src="images/dailybites/dailybites-img-click.jpg" alt="">
+      <div class="overlay-text left-text">Daily Bites</div>
+      <div class="overlay-text right-text">View Project</div>
+    </a>
+  </div>
 </div>
 
+<div class="projects-row">
+  <!-- Hotblends -->
+  <div class="project-card-click">
+    <a href="hotblends.html">
+      <img src="images/hotblends/hotblends-img-click.jpg" alt="">
+      <div class="overlay-text left-text">Hotblends</div>
+      <div class="overlay-text right-text">View Project</div>
+    </a>
+  </div>
+
+  <!-- PLYR -->
+  <div class="project-card-click">
+    <a href="plyr.html">
+      <img src="images/plyr/plyr-img-click.jpg" alt="">
+      <div class="overlay-text left-text">PLYR</div>
+      <div class="overlay-text right-text">View Project</div>
+    </a>
+  </div>
+</div>
     </main>
 
 
@@ -75,23 +105,21 @@
 
      <!--Fade in Event listner -->
 <script>
-  // JS: Intersection Observer to add 'visible' class when scrolled into view
-  document.addEventListener('DOMContentLoaded', () => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // animate once
-        }
-      });
-    }, {
-      threshold: 0.1 // triggers when 10% visible
-    });
+  const cards = document.querySelectorAll('.project-card-click');
 
-    document.querySelectorAll('.embeaded-click').forEach(el => {
-      observer.observe(el);
-    });
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
   });
+}, {
+  threshold: 0.1
+});
+
+cards.forEach(card => observer.observe(card));
+
 </script>
 
     <script>
