@@ -149,7 +149,7 @@ transform: scale(1.1);
   background-color: #f8f8f8;
   display: flex;
   justify-content: center;
-  margin-bottom: 12%;
+  margin-bottom: 5%;
 }
 
 .project-wrapper {
@@ -163,9 +163,10 @@ transform: scale(1.1);
 
 /* LEFT COLUMN (Title) */
 .project-title {
-  flex: 2 1 25%; /* Shrinks down when needed */
+  flex: 0.1 1 15%; /* Shrinks down when needed */
   min-width: 180px; /* Prevents it from becoming too small */
-  width:200px;
+  padding-left: 5%;
+  padding-right: 5%;
 
 }
 
@@ -174,27 +175,34 @@ transform: scale(1.1);
   font-size:clamp(2em, 4.5vw,4.5em);
   line-height: 1.1;
   margin: 0;
-  color: #1a1a1a;
+  color: #1f2329;
   
 }
 
 /* RIGHT COLUMN (Description) */
 .project-description {
-  flex: 1 1 70%; /* Grows to fill remaining space */
+  flex: 0.6 1 2; /* Grows to fill remaining space */
   font-family: 'VisbyMedium', sans-serif;
-  font-size: clamp(.9rem, 4vw, 1.2rem);
+  font-size: clamp(.9rem, 1.5vw, 1.2rem);
   color: #333;
   line-height: 1.7;
+  padding-left:5%;
+   padding-right:5%;
+
 }
 .about-brand {
   flex: 1 1 70%; /* Grows to fill remaining space */
   font-family: 'VisbyMedium', sans-serif;
-  font-size: clamp(.7rem, 4vw, 1rem);
+  font-size: clamp(0.7rem, 1.5vw, 1.2rem);
   color: #333;
   line-height: 1.7;
 }
-.project-description .project-services {
-  font-family: 'VisbyMedium', sans-serif;
+
+.project-goals {
+  font-size:clamp(0.7rem,2vw,1rem);
+}
+ .project-services {
+  font-family: 'VisbyBold', sans-serif;
   margin-bottom: 1.5rem;
   color: #111;
   font-size: clamp(1rem, 2vw, 1.3rem);
@@ -213,10 +221,11 @@ transform: scale(1.1);
 }
 .port-branding-txt{
   padding: 8%;
-  padding-left: 22%;
-  padding-right:22%;
-  font-size: clamp(0.6rem,4vw, 1rem);
+  padding-left: 18%;
+  padding-right:18%;
+  font-size: clamp(0.3rem,4vw, 0.9rem);
   text-align: center;
+  font-family: 'VisbyRegular';
 }
 /* ============ MEDIA QUERIES ============ */
 
@@ -234,7 +243,9 @@ transform: scale(1.1);
   main{
   padding-top:17%;
 }
-
+.port-branding-txt{
+  font-size:0.6rem;
+}
 }
 
 @media (max-width: 768px) {
@@ -284,12 +295,10 @@ transform: scale(1.1);
     font-size: clamp(2rem, 6vw, 4rem);
   }
 
-  .project-description {
-    font-size: 1rem;
-  }
+ 
 
   .project-description .project-services {
-    font-size: 1.1rem;
+    font-size:clamp(0.8rem, 2vw, 1rem);
   }
 
 }
@@ -363,6 +372,7 @@ transform: scale(1.1);
     width: 95%;
   }
 }
+
 
 @media (min-width: 1200px) {
   .container {
