@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>egraphics</title>
+  <link rel="stylesheet" href="styles/portfoliostyle.css" />
+  <link rel="icon" href="images/egraphics/logo.png" type="image/x-icon">
+
+  <script type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"></script>
+
+  <style>
+        .lottie-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background-color: #1a1a1a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: sans-serif;
+    }
+  </style>
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
+  <!-- Hover Lottie Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const lottieBtn = document.getElementById("hoverButton");
+    const player = document.getElementById("hoverLottie");
+
+    // Wait for player to initialize, then force stop
+    const stopAfterInit = () => {
+      requestAnimationFrame(() => {
+        player.stop(); // Ensures it's not playing
+      });
+    };
+
+    // Call stop after a slight delay to ensure it's initialized
+    setTimeout(stopAfterInit, 50);
+
+    // Hover interactions
+    lottieBtn.addEventListener("mouseenter", () => {
+      player.play();
+    });
+
+    lottieBtn.addEventListener("mouseleave", () => {
+      player.stop();
+    });
+  });
+</script>
+
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <div class="nav-logo">
+        <a href="index.html"><img src="images/egraphics/egraphics-button.svg" alt=""></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">about</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="#">Inquire</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    
+  <button id="hoverButton" class="lottie-btn">
+    <span class="btn-text">Hover me</span>
+    <dotlottie-player
+      id="hoverLottie"
+      src="https://lottie.host/c88a1dc7-a67e-44ad-9a17-e4667befbb93/P6LrkV7WHG.lottie"
+      background="transparent"
+      speed="1"
+      style="width: 40px; height: 40px;"
+      loop
+      autoplay="false"
+    ></dotlottie-player>
+  </button>
+  </main>
+
+  
+  <script>
+    const btn = document.getElementById("hoverButton");
+    const player = document.getElementById("hoverLottie");
+
+    // Stop the animation when it's fully loaded
+    player.addEventListener("load", () => {
+      player.stop();
+      player.seek(0);
+    });
+
+    // Play on hover
+    btn.addEventListener("mouseenter", () => {
+      player.play();
+    });
+
+    // Stop on mouse leave
+    btn.addEventListener("mouseleave", () => {
+      player.stop();
+      player.seek(0);
+    });
+  </script>
+  <!-- Nav Menu Script -->
+  <script>
+    const toggleBtn = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+
+  <!-- Adjust Main Padding on Load -->
+  <script>
+    function adjustMainPadding() {
+      const navbar = document.querySelector('.navbar');
+      const main = document.querySelector('main');
+      if (navbar && main) {
+        const navHeight = navbar.offsetHeight;
+        main.style.paddingTop = `${navHeight}px`;
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', adjustMainPadding);
+    window.addEventListener('resize', adjustMainPadding);
+  </script>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-left">
+        <p>egraphics co.</p>
+        <p>eastern mainroad barataria</p>
+        <p>Copyright egraphics co. All Rights Reserved 2025</p>
+      </div>
+
+      <div class="footer-right">
+        <h3>Want to <span class="highlight">learn</span> something new every week? Join my newsletter.</h3>
+        <form class="newsletter-form">
+          <input type="text" placeholder="First Name" />
+          <input type="email" placeholder="Email Address" />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="social-icons">
+        <a href="https://www.instagram.com/egraphics_tt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+          <img src="images/icons/instagram.svg" alt="Instagram">
+        </a>
+        <a href="#"><img src="images/icons/tiktok.svg" alt="TikTok"></a>
+      </div>
+      <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Design Work</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
