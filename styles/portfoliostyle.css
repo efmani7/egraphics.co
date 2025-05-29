@@ -256,71 +256,34 @@ transform: scale(1.1);
 .footer-links a:hover {
   background-color: #333;
 }
-
 .project-section {
-  padding: 2rem 2%;
-  background-color: #f8f8f8;
   display: flex;
-  justify-content: center;
-  margin-bottom: 5%;
-}
-
-.project-wrapper {
-  display: flex;
-  max-width: 100%;
-  width: 100%;
-  gap: 1rem;
+  gap: 3rem;
   align-items: flex-start;
-  flex-wrap: nowrap; /* Keep side-by-side as long as possible */
+  justify-content: space-between;
+  padding: 2rem;
+  flex-wrap: wrap;
 }
 
-/* LEFT COLUMN (Title) */
-.project-title {
-  flex: 0.1 1 15%; /* Shrinks down when needed */
-  min-width: 180px; /* Prevents it from becoming too small */
-  padding-left: 5%;
-  padding-right: 5%;
-
-}
-
-.project-title h2 {
-  font-family: 'VisbyExtrabold', sans-serif;
-  font-size:clamp(2em, 4.5vw,4.5em);
-  line-height: 1.1;
+.title h1 {
+  font-family: 'VisbyHeavy';
+  font-size: clamp(2rem, 5vw, 4rem); /* Responsive size */
+  font-weight: 800;
+  line-height: 1.2;
   margin: 0;
-  color: #1f2329;
-  
+  color: #1a1a1a;
 }
 
-/* RIGHT COLUMN (Description) */
-.project-description {
-  flex: 0.6 1 2; /* Grows to fill remaining space */
-  font-family: 'VisbyMedium', sans-serif;
-  font-size: clamp(.9rem, 1.5vw, 1.2rem);
-  color: #333;
-  line-height: 1.7;
-  padding-left:5%;
-   padding-right:5%;
-
-}
-.about-brand {
-  flex: 1 1 70%; /* Grows to fill remaining space */
-  font-family: 'VisbyMedium', sans-serif;
-  font-size: clamp(0.7rem, 1.5vw, 1.2rem);
-  color: #333;
-  line-height: 1.7;
+.title {
+  flex: 1 1 300px;
 }
 
-.project-goals {
-  font-size:clamp(0.7rem,2vw,1rem);
+.description {
+  flex: 2 1 500px;
+  font-size:clamp(0.7rem, 1.2vw,1rem);
+  font-family:'VisbyMedium';
+  line-height: 1.6;
 }
- .project-services {
-  font-family: 'VisbyBold', sans-serif;
-  margin-bottom: 1.5rem;
-  color: #111;
-  font-size: clamp(1rem, 2vw, 1.3rem);
-}
-
 .port-branding {
   width: 100%;
   height: auto;
