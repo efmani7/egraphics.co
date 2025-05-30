@@ -149,9 +149,23 @@ h1.home-title {
   text-align: center;
   color: #333;
   font-size: clamp(2rem, 6vw, 5em);
-  margin-top:10%;
+  margin-top:2%;
 }
 
+.logo-intro {
+  width: 100%;
+ /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent; /* Optional: background color */
+}
+
+.logo-intro video {
+  max-width: 100%;
+  height: auto;
+  display: inline;
+}
 
 .site-footer {
   background-color: #fff;

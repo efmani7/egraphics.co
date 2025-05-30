@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>egraphics</title>
-<link rel="stylesheet" href="styles/style.css" />
-<link rel="icon" href="images/egraphics/logo.png" type="image/x-icon">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>egraphics</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="icon" href="images/egraphics/logo.png" type="image/x-icon">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
 <body>
 
   <nav class="navbar">
     <div class="nav-container">
-      <!-- Place this inside .nav-container, before .nav-icons -->
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        ☰
-      </button>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
 
-      <div class="nav-logo"> <a href="index.html"><img src="images/egraphics/egraphics-button.svg" alt=""> </a></div>
+      <div class="nav-logo">
+        <a href="index.html">
+          <img src="images/egraphics/egraphics-button.svg" alt="egraphics logo">
+        </a>
+      </div>
+
       <ul class="nav-links">
         <li><a href="#">about</a></li>
         <li><a href="projects.html">projects</a></li>
@@ -24,14 +28,34 @@
       </ul>
     </div>
   </nav>
+
   <main>
-    <h1 class="home-title">Helping <span class="special-txt">brands</span> discover their true potential <br> through my
-      creative strategy. </h1>
+    <div class="logo-intro">
+      <lottie-player
+        src="https://lottie.host/5ae5e0dc-73d3-4a5e-9994-61be2137624f/44nrcKpNbq.json"
+        background="transparent"
+        speed="1"
+        autoplay
+        style="width: 40%; height:auto;"
+      ></lottie-player>
+    </div>
+
+    <h1 class="home-title">
+      Helping <span class="special-txt">brands</span> discover their true potential <br>
+      through my creative strategy.
+    </h1>
   </main>
 
+<dotlottie-player
+  src="https://lottie.host/5ae5e0dc-73d3-4a5e-9994-61be2137624f/44nrcKpNbq.json"
+  background="transparent"
+  speed="1"
+  style="width: 40%; height:auto"
+  loop
+  autoplay
+></dotlottie-player>
 
-
-  <!--Nav Menu Script -->
+  <!-- Nav Toggle Script -->
   <script>
     const toggleBtn = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -39,74 +63,62 @@
     toggleBtn.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
-  </script>
 
-  <script>
-    const navLinks = document.querySelector('.nav-links');
-    const toggleBtn = document.querySelector('.nav-toggle');
-
-    toggleBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-
-    // Close menu when any nav link is clicked
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
       });
     });
   </script>
-<script>
-  function adjustMainPadding() {
-    const navbar = document.querySelector('.navbar');
-    const main = document.querySelector('main');
 
-    if (navbar && main) {
-      const navHeight = navbar.offsetHeight;
-      main.style.paddingTop = `${navHeight}px`;
+  <!-- Adjust main padding for fixed navbar -->
+  <script>
+    function adjustMainPadding() {
+      const navbar = document.querySelector('.navbar');
+      const main = document.querySelector('main');
+
+      if (navbar && main) {
+        const navHeight = navbar.offsetHeight;
+        main.style.paddingTop = `${navHeight}px`;
+      }
     }
-  }
 
-  // Run on load and on resize
-  window.addEventListener('DOMContentLoaded', adjustMainPadding);
-  window.addEventListener('resize', adjustMainPadding);
-</script>
+    window.addEventListener('DOMContentLoaded', adjustMainPadding);
+    window.addEventListener('resize', adjustMainPadding);
+  </script>
 
-<footer class="site-footer">
-  <div class="footer-top">
-    <div class="footer-left">
-      <p>egraphics co.</p>
-      <p>eastern mainroad barataria</p>
-      <p>Copyright egraphics co. All Rights Reserved 2025</p>
-    <!--  <div class="footer-buttons">
-        <a href="#" class="footer-btn">Privacy Policy</a>
-        <a href="#" class="footer-btn">Terms and Conditions</a>
-      </div>-->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-left">
+        <p>egraphics co.</p>
+        <p>eastern mainroad barataria</p>
+        <p>Copyright egraphics co. All Rights Reserved 2025</p>
+      </div>
+
+      <div class="footer-right">
+        <h3>Want to <span class="highlight">learn</span> something new every week? Join my newsletter.</h3>
+        <form class="newsletter-form">
+          <input type="text" placeholder="First Name" />
+          <input type="email" placeholder="Email Address" />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
     </div>
 
-    <div class="footer-right">
-      <h3>Want to <span class="highlight">learn</span> something new every week? Join my newsletter.</h3>
-      <form class="newsletter-form">
-        <input type="text" placeholder="First Name" />
-        <input type="email" placeholder="Email Address" />
-        <button type="submit">Subscribe</button>
-      </form>
+    <div class="footer-bottom">
+      <div class="social-icons">
+        <a href="https://www.instagram.com/egraphics_tt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+          <img src="images/icons/instagram.svg" alt="Instagram">
+        </a>
+        <a href="#"><img src="images/icons/tiktok.svg" alt="TikTok"></a>
+      </div>
+      <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Design Work</a>
+      </div>
     </div>
-  </div>
-
-  <div class="footer-bottom">
-    <div class="social-icons">
-      <a href="https://www.instagram.com/egraphics_tt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"><img src="images/icons/instagram.svg" alt="Instagram"></a>
-      <a href="#"><img src="images/icons/tiktok.svg" alt="YouTube"></a>
-    </div>
-    <div class="footer-links">
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-      <a href="#">Design Work</a>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 </body>
-
 </html>

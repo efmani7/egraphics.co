@@ -1,22 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>egraphics</title>
-<link rel="stylesheet" href="styles/portfoliostyle.css" />
-<link rel="icon" href="images/egraphics/logo.png" type="image/x-icon">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>egraphics</title>
+  <link rel="stylesheet" href="styles/portfoliostyle.css" />
+  <link rel="icon" href="images/egraphics/logo.png" type="image/x-icon">
+  <!-- Lottie Player Component -->
+  <script type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"></script>
+
+  <!-- Hover Lottie Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const lottieBtn = document.getElementById("hoverButton");
+      const lottieplayer = document.getElementById("hoverLottie");
+
+      // Wait for player to initialize, then force stop
+      const stopAfterInit = () => {
+        requestAnimationFrame(() => {
+          lottieplayer.stop(); // Ensures it's not playing
+        });
+      };
+
+      // Call stop after a slight delay to ensure it's initialized
+      setTimeout(stopAfterInit, 50);
+
+      // Hover interactions
+      lottieBtn.addEventListener("mouseenter", () => {
+        lottieplayer.play();
+      });
+
+      lottieBtn.addEventListener("mouseleave", () => {
+        lottieplayer.stop();
+      });
+    });
+  </script>
 </head>
 
 <body>
-
   <nav class="navbar">
     <div class="nav-container">
-      <!-- Place this inside .nav-container, before .nav-icons -->
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        ☰
-      </button>
-
-      <div class="nav-logo"> <a href="index.html"><img src="images/egraphics/egraphics-button.svg" alt=""> </a></div>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <div class="nav-logo">
+        <a href="index.html"><img src="images/egraphics/egraphics-button.svg" alt=""></a>
+      </div>
       <ul class="nav-links">
         <li><a href="#">about</a></li>
         <li><a href="projects.html">projects</a></li>
@@ -24,95 +52,143 @@
       </ul>
     </div>
   </nav>
+
   <main>
     <div class="project-section">
       <div class="title">
         <h1>Embeaded!<br>Co.</h1>
       </div>
       <div class="description">
-        <h3><strong>Brand Strategy</strong> | <strong>Visual Identity</strong> |
-          <strong>Packaging Design</strong> | <strong>Stationery</strong>
-        </h3>
-        <p> <br>
-        <h4> Embeaded - Crafted with Joy, Worn with Purpose</h4>
-        <br>
-        Embeaded is a vibrant, handcrafted accessory brand specializing in custom bracelets, waistbands, anklets,
-        and keychains for style-lovers aged 10/40. Inspired by the playful spirit of spring, their pieces blend bold
-        color, personal expression, and elegant craftsmanship.
+        <h3><strong>Brand Strategy</strong> | <strong>Visual Identity</strong> | <strong>Packaging Design</strong> |
+          <strong>Stationery</strong></h3>
+        <p><br>
+        <h4>Embeaded - Crafted with Joy, Worn with Purpose</h4><br>
+        Embeaded is a vibrant, handcrafted accessory brand specializing in custom bracelets, waistbands, anklets, and
+        keychains for style-lovers aged 10/40. Inspired by the playful spirit of spring, their pieces blend bold color,
+        personal expression, and elegant craftsmanship.
 
         With a palette of off white, pastel purple, earthy green, hot pink, tan, and citrus orange, every creation
         reflects the energy, individuality, and creativity of the wearer. Embeaded isn't just about accessories—it’s
-        about celebrating who you are, one bead at a time.</p>
-        <p>
-          <br>
+        about celebrating who you are, one bead at a time.
+        </p>
+        <p><br>
           <strong>Project Goal:</strong> To build a vibrant, expressive brand that delivers handcrafted accessories
           celebrating individuality and personal style.
-
         </p>
       </div>
     </div>
 
-    <!---->
     <div class="port-branding">
       <img src="images/embeaded/embeaded-logo.jpg" alt="">
       <img src="images/embeaded/embeaded-jewelry-bag.jpg" alt="">
       <img src="images/embeaded/embeaded-products.jpg" alt="">
       <div class="port-branding-txt">
-        <p>“Embeaded is where craft creates connection.
-          The woven thread beneath the wordmark captures the essence of beading—meticulous, expressive, and deeply
-          inclusive. Each curve and color speaks to diverse voices, artfully woven into a unified identity. The bold
-          period seals the statement: complete, confident, and unapologetically creative.”</p>
+        <p>Embeaded is where craft creates connection. The woven thread beneath the wordmark captures the essence of
+          beading—meticulous, expressive, and deeply inclusive. Each curve and color speaks to diverse voices, artfully
+          woven into a unified identity. The bold period seals the statement: complete, confident, and unapologetically
+          creative.</p>
       </div>
       <img src="images/embeaded/embeaded-packaging.jpg" alt="">
       <img src="images/embeaded/embeaded-assets.jpg" alt="">
+            <div class="port-branding-txt">
+        <p>Expressive, Vibrant and colourful welcome goodies included with purchases to deliver a lasting impression.
+          creative.</p>
+      </div>
+      <img src="images/embeaded/embeaded-stickers.jpg" alt="">
       <img src="images/embeaded/embeaded-letter.jpg" alt="">
+    </div>
 
+
+
+    <div class="gif-btn-wrapper">
+      <!-- Lottie Button (left) -->
+      <a href="index.html">
+        <button id="hoverButton" class="lottie-btn">
+          <span class="btn-label">Home</span>
+          <dotlottie-player id="hoverLottie"
+            src="https://lottie.host/ad5a58d4-20b8-4ff7-a34b-b3532d66bcf9/8DpZqtz2rI.lottie" loop
+            style="width: 70px; height: 70px;" speed="1.5" autoplay="false"></dotlottie-player>
+        </button>
+      </a>
+      <!-- GIF Button (right) -->
+      <a href="projects.html" class="gif-btn" id="gifBtn">
+        See more work!
+        <img src="lotties/project-smiley/static-smiley.png" data-hover="lotties/project-smiley/smiley-gif.gif"
+          data-default="lotties/project-smiley/static-smiley.png" alt="Hover Button" id="gifButton">
+      </a>
     </div>
   </main>
-
- <div class="button-container">
-  <a href="projects.html" class="see-more-btn">
-    See more work →
-  </a>
-</div>
-
-  <!--Nav Menu Script -->
+  <!-- Script for Hover Lottie -->
   <script>
-    const toggleBtn = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    document.addEventListener("DOMContentLoaded", () => {
+      const lottieBtn = document.getElementById("hoverButton");
+      const lottiePlayer = document.getElementById("hoverLottie");
 
-    toggleBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+      if (lottieBtn && lottiePlayer) {
+        // Make sure it starts stopped
+        setTimeout(() => {
+          lottiePlayer.stop();
+          lottiePlayer.seek(0);
+        }, 50);
+
+        lottieBtn.addEventListener("mouseenter", () => {
+          lottiePlayer.play();
+        });
+
+        lottieBtn.addEventListener("mouseleave", () => {
+          lottiePlayer.stop();
+          lottiePlayer.seek(0);
+        });
+      }
     });
   </script>
 
+
+  <!-- Script for Hover GIF -->
   <script>
-    const navLinks = document.querySelector('.nav-links');
+    document.addEventListener("DOMContentLoaded", () => {
+      const gifBtn = document.getElementById("gifBtn");
+      const gifImg = document.getElementById("gifButton");
+
+      if (gifBtn && gifImg) {
+        gifBtn.addEventListener('mouseenter', () => {
+          gifImg.src = gifImg.getAttribute('data-hover');
+        });
+
+        gifBtn.addEventListener('mouseleave', () => {
+          gifImg.src = gifImg.getAttribute('data-default');
+        });
+      }
+    });
+  </script>
+
+  <!-- Nav toggle -->
+  <script>
     const toggleBtn = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
     toggleBtn.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
 
-    // Close menu when any nav link is clicked
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
       });
     });
   </script>
+
+  <!-- Adjust padding for fixed nav -->
   <script>
     function adjustMainPadding() {
       const navbar = document.querySelector('.navbar');
       const main = document.querySelector('main');
-
       if (navbar && main) {
         const navHeight = navbar.offsetHeight;
-        main.style.paddingTop = ${ navHeight } px;
+        main.style.paddingTop = `${navHeight}px`;
       }
     }
 
-    // Run on load and on resize
     window.addEventListener('DOMContentLoaded', adjustMainPadding);
     window.addEventListener('resize', adjustMainPadding);
   </script>

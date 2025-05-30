@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,48 +10,35 @@
 
   <script type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"></script>
 
-  <style>
-        .lottie-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.25rem;
-      background-color: #1a1a1a;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-family: sans-serif;
-    }
-  </style>
-<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 
   <!-- Hover Lottie Script -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const lottieBtn = document.getElementById("hoverButton");
-    const player = document.getElementById("hoverLottie");
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const lottieBtn = document.getElementById("hoverButton");
+      const player = document.getElementById("hoverLottie");
 
-    // Wait for player to initialize, then force stop
-    const stopAfterInit = () => {
-      requestAnimationFrame(() => {
-        player.stop(); // Ensures it's not playing
+      // Wait for player to initialize, then force stop
+      const stopAfterInit = () => {
+        requestAnimationFrame(() => {
+          player.stop(); // Ensures it's not playing
+        });
+      };
+
+      // Call stop after a slight delay to ensure it's initialized
+      setTimeout(stopAfterInit, 50);
+
+      // Hover interactions
+      lottieBtn.addEventListener("mouseenter", () => {
+        player.play();
       });
-    };
 
-    // Call stop after a slight delay to ensure it's initialized
-    setTimeout(stopAfterInit, 50);
-
-    // Hover interactions
-    lottieBtn.addEventListener("mouseenter", () => {
-      player.play();
+      lottieBtn.addEventListener("mouseleave", () => {
+        player.stop();
+      });
     });
-
-    lottieBtn.addEventListener("mouseleave", () => {
-      player.stop();
-    });
-  });
-</script>
+  </script>
 
 </head>
 
@@ -70,22 +58,234 @@
   </nav>
 
   <main>
-    
-  <button id="hoverButton" class="lottie-btn">
-    <span class="btn-text">Hover me</span>
-    <dotlottie-player
-      id="hoverLottie"
-      src="https://lottie.host/c88a1dc7-a67e-44ad-9a17-e4667befbb93/P6LrkV7WHG.lottie"
-      background="transparent"
-      speed="1"
-      style="width: 40px; height: 40px;"
-      loop
-      autoplay="false"
-    ></dotlottie-player>
-  </button>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>egraphics</title>
+      <link rel="stylesheet" href="styles/portfoliostyle.css" />
+      <link rel="icon" href="images/egraphics/logo.png" type="image/x-icon">
+      <!-- Lottie Player Component -->
+      <script type="module"
+        src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"></script>
+
+      <!-- Hover Lottie Script -->
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const lottieBtn = document.getElementById("hoverButton");
+          const lottieplayer = document.getElementById("hoverLottie");
+
+          // Wait for player to initialize, then force stop
+          const stopAfterInit = () => {
+            requestAnimationFrame(() => {
+              lottieplayer.stop(); // Ensures it's not playing
+            });
+          };
+
+          // Call stop after a slight delay to ensure it's initialized
+          setTimeout(stopAfterInit, 50);
+
+          // Hover interactions
+          lottieBtn.addEventListener("mouseenter", () => {
+            lottieplayer.play();
+          });
+
+          lottieBtn.addEventListener("mouseleave", () => {
+            lottieplayer.stop();
+          });
+        });
+      </script>
+    </head>
+
+    <body>
+      <nav class="navbar">
+        <div class="nav-container">
+          <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+          <div class="nav-logo">
+            <a href="index.html"><img src="images/egraphics/egraphics-button.svg" alt=""></a>
+          </div>
+          <ul class="nav-links">
+            <li><a href="#">about</a></li>
+            <li><a href="projects.html">projects</a></li>
+            <li><a href="#">Inquire</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <main>
+        <div class="project-section">
+          <div class="title">
+            <h1>PLYR</h1>
+          </div>
+          <div class="description">
+            <h3><strong>Apparel Design</strong> | <strong>Visual Identity</strong> 
+            <p><br>
+            <h4>Keep it P!</h4><br>
+            Player Player (PLYR®) is a Trinidad-based streetwear brand founded in 2016. Known for its bold,
+            urban-inspired fashion, the brand offers a range of apparel including jerseys, tees, hoodies, and
+            customizable pieces. Rooted in creativity, individuality, and quality design, PLYR® blends street style with
+            a distinct Caribbean flair. The brand is active on Instagram, connecting with a diverse audience through
+            fashion drops and lifestyle content. </p>
+            <p><br>
+              <strong>Project Goal:</strong> To build a bold, expressive brand identity that doesn’t just represent PLAYER 
+              fashion—it shouts it. A visual statement that blends street culture, individuality, and high-impact design into one unapologetic style movement.
+            </p>
+          </div>
+        </div>
+
+        <div class="port-branding">
+          <img src="images/plyr/plyr-logo.jpg" alt="">
+          <img src="images/plyr/plyr-hedge.jpg" alt="">
+          <div class="port-branding-txt">
+            <p>A standout brand design that captures the essence of urban streetwear and elevates PLAYER fashion with a bold, premium finish.</p>
+          </div>
+          <img src="images/plyr/plyr-hedge-model.jpg" alt="">
+          <div class="port-branding-txt">
+            <p>A distinctive brand design that redefines streetwear through a luxurious lens—elevating PLAYER fashion into a statement of style, status, and substance.</p>
+          </div>
+          <img src="images/plyr/plyr-dual-tee.jpg" alt="">
+        </div>
+
+
+
+        <div class="gif-btn-wrapper">
+          <!-- Lottie Button (left) -->
+          <a href="index.html">
+            <button id="hoverButton" class="lottie-btn">
+              <span class="btn-label">Home</span>
+              <dotlottie-player id="hoverLottie"
+                src="https://lottie.host/ad5a58d4-20b8-4ff7-a34b-b3532d66bcf9/8DpZqtz2rI.lottie" loop
+                style="width: 70px; height: 70px;" speed="1.5" autoplay="false"></dotlottie-player>
+            </button>
+          </a>
+          <!-- GIF Button (right) -->
+          <a href="projects.html" class="gif-btn" id="gifBtn">
+            See more work!
+            <img src="lotties/project-smiley/static-smiley.png" data-hover="lotties/project-smiley/smiley-gif.gif"
+              data-default="lotties/project-smiley/static-smiley.png" alt="Hover Button" id="gifButton">
+          </a>
+        </div>
+      </main>
+      <!-- Script for Hover Lottie -->
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const lottieBtn = document.getElementById("hoverButton");
+          const lottiePlayer = document.getElementById("hoverLottie");
+
+          if (lottieBtn && lottiePlayer) {
+            // Make sure it starts stopped
+            setTimeout(() => {
+              lottiePlayer.stop();
+              lottiePlayer.seek(0);
+            }, 50);
+
+            lottieBtn.addEventListener("mouseenter", () => {
+              lottiePlayer.play();
+            });
+
+            lottieBtn.addEventListener("mouseleave", () => {
+              lottiePlayer.stop();
+              lottiePlayer.seek(0);
+            });
+          }
+        });
+      </script>
+
+
+      <!-- Script for Hover GIF -->
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const gifBtn = document.getElementById("gifBtn");
+          const gifImg = document.getElementById("gifButton");
+
+          if (gifBtn && gifImg) {
+            gifBtn.addEventListener('mouseenter', () => {
+              gifImg.src = gifImg.getAttribute('data-hover');
+            });
+
+            gifBtn.addEventListener('mouseleave', () => {
+              gifImg.src = gifImg.getAttribute('data-default');
+            });
+          }
+        });
+      </script>
+
+      <!-- Nav toggle -->
+      <script>
+        const toggleBtn = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        toggleBtn.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+          });
+        });
+      </script>
+
+      <!-- Adjust padding for fixed nav -->
+      <script>
+        function adjustMainPadding() {
+          const navbar = document.querySelector('.navbar');
+          const main = document.querySelector('main');
+          if (navbar && main) {
+            const navHeight = navbar.offsetHeight;
+            main.style.paddingTop = `${navHeight}px`;
+          }
+        }
+
+        window.addEventListener('DOMContentLoaded', adjustMainPadding);
+        window.addEventListener('resize', adjustMainPadding);
+      </script>
+
+      <footer class="site-footer">
+        <div class="footer-top">
+          <div class="footer-left">
+            <p>egraphics co.</p>
+            <p>eastern mainroad barataria</p>
+            <p>Copyright egraphics co. All Rights Reserved 2025</p>
+            <!--  <div class="footer-buttons">
+        <a href="#" class="footer-btn">Privacy Policy</a>
+        <a href="#" class="footer-btn">Terms and Conditions</a>
+      </div>-->
+          </div>
+
+          <div class="footer-right">
+            <h3>Want to <span class="highlight">learn</span> something new every week? Join my newsletter.</h3>
+            <form class="newsletter-form">
+              <input type="text" placeholder="First Name" />
+              <input type="email" placeholder="Email Address" />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="social-icons">
+            <a href="https://www.instagram.com/egraphics_tt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank" rel="noopener noreferrer"><img src="images/icons/instagram.svg" alt="Instagram"></a>
+            <a href="#"><img src="images/icons/tiktok.svg" alt="YouTube"></a>
+          </div>
+          <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Design Work</a>
+          </div>
+        </div>
+      </footer>
+    </body>
+
+    </html>
+
   </main>
 
-  
+
   <script>
     const btn = document.getElementById("hoverButton");
     const player = document.getElementById("hoverLottie");
@@ -158,7 +358,8 @@
 
     <div class="footer-bottom">
       <div class="social-icons">
-        <a href="https://www.instagram.com/egraphics_tt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/egraphics_tt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          target="_blank" rel="noopener noreferrer">
           <img src="images/icons/instagram.svg" alt="Instagram">
         </a>
         <a href="#"><img src="images/icons/tiktok.svg" alt="TikTok"></a>
@@ -171,4 +372,5 @@
     </div>
   </footer>
 </body>
+
 </html>

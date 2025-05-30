@@ -58,7 +58,7 @@ body {
   min-width:400px;
 }
 main{
-  padding-top:10%;
+  padding-top:5%;
 }
 /* NAVIGATION BAR */
 .navbar {
@@ -197,7 +197,7 @@ margin-left:0;
   padding: 8%;
   padding-left: 18%;
   padding-right:18%;
-  font-size: clamp(0.3rem,4vw, 0.9rem);
+  font-size: clamp(0.4rem,4vw, 1rem);
   text-align: center;
   font-family: 'VisbyRegular';
   line-height:2;
@@ -344,7 +344,89 @@ margin-left:0;
   background-color: #333;
 }
 
+/* Home Lottie Button with Link */
 
+.lottie-btn {
+  background-color:transparent;
+  border:2px solid #d8d8d8;
+  padding:2px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #1a1a1a;
+  font-family: 'VisbySemibold', sans-serif;
+  font-size: clamp(0.7rem, 1vw, 1.5rem);
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  user-select: none;
+  height:5%;
+}
+
+/* Lottie Button Hover */
+.lottie-btn:hover {
+  transform: scale(1.1);
+  background-color: #d60029;
+  color: #fff;
+  border: none;
+}
+
+/* Ensure Lottie player matches icon size */
+.lottie-btn dotlottie-player {
+  width: 70px !important;
+  height: 70px !important;
+  flex-shrink: 0; /* prevent it from shrinking */
+  pointer-events: none; /* ensures player doesn't intercept hover */
+}
+
+
+/* Projects Gif Button with Link */
+.gif-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%; /* adjust as needed */
+  flex-wrap: wrap; /* makes them stack on small screens */
+  height: 10vh;
+  margin-top:5%;
+}
+
+
+    /* Make the link look like a button */
+    .gif-btn {
+      background-color:#002547;
+      border:2px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center; /* vertical centering */
+      gap: 10px; /* space between text and image */
+      color: #fff;
+      font-family: 'VisbySemibold',sans-serif;
+      font-size:clamp(0.7rem, 1vw, 1.5rem);
+      text-decoration: none;
+      transition: transform 0.2s ease;
+      user-select: none;
+    }
+
+    .gif-btn img {
+      width: 50px;
+      height: 50px;
+      transition: transform 0.2s ease;
+    }
+
+    /* Scale whole button on hover */
+    .gif-btn:hover {
+      transform: scale(1.1);
+      background-color: #d60029;
+      color: #fff;
+    }
+
+    .gif-btn-wrapper a {
+      text-decoration: none;
+    }
 /* ================================================  MEDIA QUERIES ================================================ */
 
 /* Mobile-first (small screens) */
@@ -352,6 +434,26 @@ margin-left:0;
   .see-more-btn {
     font-size: 0.9rem;
     padding: 0.6rem 1.2rem;
+  }
+  .lottie-btn {
+height:5%;
+    padding: 1px 12px;
+    gap: 2px;
+  }
+
+  .lottie-btn dotlottie-player {
+    width: 30px;
+    height:30px;
+  }
+    .gif-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.9rem;
+    gap: 0.4rem;
+  }
+
+  .gif-btn img {
+    width: 35px;
+    height: 35px;
   }
 }
 @media (max-width: 599px) {
@@ -425,6 +527,26 @@ margin-left:0;
     max-width: 90%;
 
   }
+  .lottie-btn {
+    height: 60px;
+    padding: 2px 15px;
+    gap: 3px;
+  }
+
+  .lottie-btn dotlottie-player {
+    width: 50px;
+    height: 50px;
+  }
+    .gif-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .gif-btn img {
+    width: 40px;
+    height: 40px;
+  }
    .footer-top {
     flex-direction: column;
   }
@@ -449,10 +571,12 @@ margin-left:0;
     h1.home-title{
     font-size: 2.8rem;
   }
+  
 }
 
 /* Grid utilities */
 @media (min-width: 768px) {
+
   .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

@@ -1,0 +1,32 @@
+Adobe After Effects v25.2.2 Windows 64 render log for project “smiley-animation.aep”
+
+Rendering started on 5/30/2025 at 9:00:02 AM
+
+  5/30/2025 9:00:02 AM: Starting composition “tempConverterComp”.
+
+  Output To: C:\Users\efaus\AppData\Local\LottieFiles for After Effects\images\63-EYES.png    5/30/2025 9:00:02 AM: Finished composition “tempConverterComp”.
+
+
+  5/30/2025 9:00:02 AM: Starting composition “tempConverterComp”.
+
+  Output To: C:\Users\efaus\AppData\Local\LottieFiles for After Effects\images\62-HAIR.png    5/30/2025 9:00:02 AM: Finished composition “tempConverterComp”.
+
+
+  5/30/2025 9:00:02 AM: Starting composition “tempConverterComp”.
+
+  Output To: C:\Users\efaus\AppData\Local\LottieFiles for After Effects\images\61-MOUTH.png    5/30/2025 9:00:02 AM: Finished composition “tempConverterComp”.
+
+
+  5/30/2025 9:00:02 AM: Starting composition “tempConverterComp”.
+
+  Output To: C:\Users\efaus\AppData\Local\LottieFiles for After Effects\images\60-NOSE.png    5/30/2025 9:00:02 AM: Finished composition “tempConverterComp”.
+
+
+  5/30/2025 9:00:02 AM: Starting composition “tempConverterComp”.
+
+  Output To: C:\Users\efaus\AppData\Local\LottieFiles for After Effects\images\59-BODY.png    5/30/2025 9:00:02 AM: Finished composition “tempConverterComp”.
+
+
+  Total Time Elapsed: 0 Seconds
+Log closed on 5/30/2025 at 9:00:02 AM
+
