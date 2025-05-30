@@ -5,6 +5,35 @@
 <title>egraphics</title>
 <link rel="stylesheet" href="styles/portfoliostyle.css" />
 <link rel="icon" href="images/egraphics/logo.png" type="image/x-icon">
+  <!-- Lottie Player Component -->
+  <script type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"></script>
+
+  <!-- Hover Lottie Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const lottieBtn = document.getElementById("hoverButton");
+      const lottieplayer = document.getElementById("hoverLottie");
+
+      // Wait for player to initialize, then force stop
+      const stopAfterInit = () => {
+        requestAnimationFrame(() => {
+          lottieplayer.stop(); // Ensures it's not playing
+        });
+      };
+
+      // Call stop after a slight delay to ensure it's initialized
+      setTimeout(stopAfterInit, 50);
+
+      // Hover interactions
+      lottieBtn.addEventListener("mouseenter", () => {
+        lottieplayer.play();
+      });
+
+      lottieBtn.addEventListener("mouseleave", () => {
+        lottieplayer.stop();
+      });
+    });
+  </script>
 </head>
 
 <body>
@@ -72,14 +101,70 @@
       <img src="images/dailybites/daily-bites-popcorn-line-up.jpg" alt="">
       <img src="images/dailybites/daily-bites-cap.jpg" alt="">
 
+
+
+
+    <div class="gif-btn-wrapper">
+      <!-- Lottie Button (left) -->
+      <a href="index.html">
+        <button id="hoverButton" class="lottie-btn">
+          <span class="btn-label">Home</span>
+          <dotlottie-player id="hoverLottie"
+            src="https://lottie.host/ad5a58d4-20b8-4ff7-a34b-b3532d66bcf9/8DpZqtz2rI.lottie" loop
+            style="width: 70px; height: 70px;" speed="1.5" autoplay="false"></dotlottie-player>
+        </button>
+      </a>
+      <!-- GIF Button (right) -->
+      <a href="projects.html" class="gif-btn" id="gifBtn">
+        See more work!
+        <img src="lotties/project-smiley/static-smiley.png" data-hover="lotties/project-smiley/smiley-gif.gif"
+          data-default="lotties/project-smiley/static-smiley.png" alt="Hover Button" id="gifButton">
+      </a>
     </div>
   </main>
- <div class="button-container">
-  <a href="projects.html" class="see-more-btn">
-    See more work →
-  </a>
-</div>
+  <!-- Script for Hover Lottie -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const lottieBtn = document.getElementById("hoverButton");
+      const lottiePlayer = document.getElementById("hoverLottie");
 
+      if (lottieBtn && lottiePlayer) {
+        // Make sure it starts stopped
+        setTimeout(() => {
+          lottiePlayer.stop();
+          lottiePlayer.seek(0);
+        }, 50);
+
+        lottieBtn.addEventListener("mouseenter", () => {
+          lottiePlayer.play();
+        });
+
+        lottieBtn.addEventListener("mouseleave", () => {
+          lottiePlayer.stop();
+          lottiePlayer.seek(0);
+        });
+      }
+    });
+  </script>
+
+
+  <!-- Script for Hover GIF -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const gifBtn = document.getElementById("gifBtn");
+      const gifImg = document.getElementById("gifButton");
+
+      if (gifBtn && gifImg) {
+        gifBtn.addEventListener('mouseenter', () => {
+          gifImg.src = gifImg.getAttribute('data-hover');
+        });
+
+        gifBtn.addEventListener('mouseleave', () => {
+          gifImg.src = gifImg.getAttribute('data-default');
+        });
+      }
+    });
+  </script>
 
   <!--Nav Menu Script -->
   <script>
