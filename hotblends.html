@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>egraphics</title>
-<link rel="stylesheet" href="styles/portfoliostyle.css" />
-<link rel="icon" href="images/egraphics/logo.png" type="image/x-icon">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>egraphics</title>
+  <link rel="stylesheet" href="styles/portfoliostyle.css" />
+  <link rel="icon" href="images/egraphics/logo.png" type="image/x-icon">
   <!-- Lottie Player Component -->
   <script type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"></script>
 
@@ -37,15 +39,10 @@
 </head>
 
 <body>
-
   <nav class="navbar">
     <div class="nav-container">
-      <!-- Place this inside .nav-container, before .nav-icons -->
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        ☰
-      </button>
-
-          <div class="nav-logo">
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <div class="nav-logo">
         <a href="index.html">
           <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 817.89 205.89">
             <path
@@ -60,54 +57,46 @@
       </ul>
     </div>
   </nav>
+
   <main>
     <div class="project-section">
       <div class="title">
-        <h1> Daily<br>Bites<br>Co.</h1>
+        <h1>Hot<br>Blends<br>Co.</h1>
       </div>
       <div class="description">
-        <h3><strong>Brand Strategy</strong> | <strong>Visual Identity</strong> |
-          <strong>Packaging Design</strong>
+        <h3><strong>Brand Strategy</strong> | <strong>Visual Identity</strong> | <strong>Packaging Design</strong> |
+          <strong>Stationery</strong>
         </h3>
-        <p>
-        <h4> Daily Bites – A Taste of Sunshine in Every Bite</h4>
-        <br>
-        For this vibrant snack brand, I crafted a bold and energetic visual identity that mirrors the fun, flavorful
-        experience of Daily Bites – a snack line that includes cheesy puffs, potato chips, and popcorn. The goal was
-        to capture the joyful chaos of snack time – playful colors, quirky graphics, and a vibe that makes every
-        bite feel like a mini celebration.Each snack variant has its own personality but ties back to a cohesive
-        identity that feels like a daily dose of joy. Whether you're munching at a party, chilling at home, or
-        tossing a pack into your kid’s lunchbox, Daily Bites brings "a taste of sunshine in every bite."
+        <p><br>
+        <h4>HotBlends – Ignite Your Taste</h4><br>
+        HotBlends is a vibrant, authenthic organic hot sauce brand specializing in exotic blends of Caribbean fire and global
+        flair for flavor-seekers. Inspired by the lush colors and bold spirit of tropical islands, each
+        bottle marries intense heat, balanced flavor, and artisanal craftsmanship—turning every meal into a joyful,
+        flavor-packed adventure.
         </p>
-        <p>
-          <strong>Project Goal:</strong> To develop a vibrant and cohesive visual identity that resonates with the
-          inner child of the target audience, appealing to snack lovers of all ages with bold colors, cheerful
-          graphics, and packaging that stands out on the shelf while reinforcing the brand’s sunny, feel-good
-          personality.
-
+        <p><br>
+          <strong>Project Goal:</strong> To create a bold and cohesive visual identity that captures HotBlends’ personality—vibrant and intense, authenticly 
+          designed to resonate with flavor lovers who crave real heat, cultural depth, and standout style in every bottle.
         </p>
       </div>
     </div>
 
-    <!---->
     <div class="port-branding">
-      <img src="images/dailybites/dailybites-logo.jpg" alt="daily bites">
-      <img src="images/dailybites/daily-bites-tote-bag.jpg" alt="tote bag">
-      <img src="images/dailybites/daily-bites-chips-layout.jpg" alt="chips packaging">
-      <img src="images/dailybites/daily-bites-chips-line-up.jpg" alt="chips packaging">
-      <div class="port-branding-txt">
-        <p>“Embeaded is where craft creates connection.
-          The woven thread beneath the wordmark captures the essence of beading—meticulous, expressive, and deeply
-          inclusive. Each curve and color speaks to diverse voices, artfully woven into a unified identity. The bold
-          period seals the statement: complete, confident, and unapologetically creative.”</p>
+      <img src="images/hotblends/hot-blends-logo.jpg" alt="hot blends">
+         <img src="images/hotblends/hotblends-packaging.jpg" alt="hot sauce packaging">
+           <div class="port-branding-txt">
+        <p>The design blends fiery color palettes, energetic typography, and spice-inspired graphics to evoke the thrill of bold flavors while honoring 
+          the brand’s Caribbean roots and adventurous spirit.</p>
       </div>
-      <img src="images/dailybites/daily-bites-logo-grid.jpg" alt="logo grid">
-      <img src="images/dailybites/daily-bites-puffs-billboard.jpg" alt="cheese snack packaging">
-      <img src="images/dailybites/daily-bites-puffs-line-up.jpg" alt="cheese snack packaging">
-      <img src="images/dailybites/dailybites-popcorn.jpg" alt="popcorn snack packaging">
-      <img src="images/dailybites/daily-bites-popcorn-line-up.jpg" alt="popcorn snack packaging">
-      <img src="images/dailybites/daily-bites-cap.jpg" alt="cap">
-
+      <img src="images/hotblends/hotblends-bag.jpg" alt="branded tote bag">
+      <img src="images/hotblends/hotblends-sticker.jpg" alt="stickers">
+      <div class="port-branding-txt">
+        <p>Every design choice—from the vibrant gradients to the expressive label layouts—was made to ensure shelf impact, brand recognition, and a
+           sensory connection that mirrors the bold experience of tasting HotBlends.</p>
+      </div>
+      <img src="images/hotblends/hotblends-assets.jpg" alt="hot sauce doodles">
+  <img src="images/hotblends/hot-blends-display.jpg" alt="hot sauce">
+    </div>
 
 
 
@@ -173,7 +162,7 @@
     });
   </script>
 
-  <!--Nav Menu Script -->
+  <!-- Nav toggle -->
   <script>
     const toggleBtn = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -181,35 +170,25 @@
     toggleBtn.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
-  </script>
 
-  <script>
-    const navLinks = document.querySelector('.nav-links');
-    const toggleBtn = document.querySelector('.nav-toggle');
-
-    toggleBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-
-    // Close menu when any nav link is clicked
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
       });
     });
   </script>
+
+  <!-- Adjust padding for fixed nav -->
   <script>
     function adjustMainPadding() {
       const navbar = document.querySelector('.navbar');
       const main = document.querySelector('main');
-
       if (navbar && main) {
         const navHeight = navbar.offsetHeight;
-        main.style.paddingTop = ${ navHeight } px;
+        main.style.paddingTop = `${navHeight}px`;
       }
     }
 
-    // Run on load and on resize
     window.addEventListener('DOMContentLoaded', adjustMainPadding);
     window.addEventListener('resize', adjustMainPadding);
   </script>
@@ -237,7 +216,7 @@
     </div>
 
     <div class="footer-bottom">
-   <div class="social-icons">
+      <div class="social-icons">
         <a  href="https://www.instagram.com/egraphics_tt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
                            <dotlottie-player
             src="https://lottie.host/e9cb8dd7-1fdf-4595-98a6-351ab121f48e/6Mtkzn4qfV.json" loop

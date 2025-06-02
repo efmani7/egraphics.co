@@ -88,6 +88,9 @@ main{
   }
   
   /* LOGO */
+  .icon:hover{
+    fill: #d60029;
+  }
   .nav-logo{
     padding-left:2%;
   }
@@ -320,12 +323,23 @@ margin-left:0;
   padding-top: 2rem;
   gap: 1rem;
 }
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
 
-.social-icons a img {
-  width: 6.5%;
-  height:auto;
-  margin-right: 1rem;
-  border-radius:10%;
+.lottie-wrapper {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scale-fix {
+  transform: scale(1.15); /* Adjust this value until both Lotties match visually */
+  transform-origin: center;
 }
 
 .footer-links a {
@@ -430,6 +444,7 @@ margin-left:0;
 /* ================================================  MEDIA QUERIES ================================================ */
 
 /* Mobile-first (small screens) */
+
 @media (max-width: 480px) {
   .see-more-btn {
     font-size: 0.9rem;
@@ -460,6 +475,7 @@ height:5%;
   .nav-logo {
     font-size: 1rem;
   }
+
   .nav-logo img{
     width: 75%;
   }
@@ -474,7 +490,17 @@ height:5%;
 }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { 
+.insta{
+  width:10%;
+height:auto;
+border-radius:3px;
+}
+
+  .mailing{
+    width:95%; height:auto;
+  }
+
   .nav-links {
     max-height: 0;
     overflow: hidden;

@@ -61,6 +61,9 @@ main{
   padding-top:15%;
 }
 /* NAVIGATION BAR */
+.icon:hover{
+fill: #d60029;
+}
 .navbar {
   background-color: rgba(248, 248, 248, 0.65); /* semi-transparent */
   backdrop-filter: blur(10px); /* apply blur to what's behind */
