@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles/portfoliostyle.css" />
   <link rel="icon" href="images/egraphics/logo.png" type="image/x-icon">
   <!-- Lottie Player Component -->
+   <!-- Lottie Player Component -->
   <script type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"></script>
 
   <!-- Hover Lottie Script -->
@@ -104,7 +105,6 @@
     </div>
 
 
-
     <div class="gif-btn-wrapper">
       <!-- Lottie Button (left) -->
       <a href="index.html">
@@ -166,6 +166,17 @@
       }
     });
   </script>
+
+  <!--Nav Menu Script -->
+  <script>
+    const toggleBtn = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
 
   <!-- Nav toggle -->
   <script>

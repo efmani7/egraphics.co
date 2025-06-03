@@ -168,7 +168,11 @@ h1.home-title {
   height: auto;
   display: inline;
 }
-
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
 .site-footer {
   background-color: #fff;
   padding: 4rem 5%;
