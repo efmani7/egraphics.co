@@ -1,46 +1,63 @@
 @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
 @font-face {
-  font-family: "VisbySemibold"; /* <-- This is what you should use */
+  font-family: "VisbySemibold";
+  /* <-- This is what you should use */
   src: url(../fonts/visby/VisbySemibold.woff2);
 }
+
 @font-face {
-  font-family: "Visbybold"; /* <-- This is what you should use */
+  font-family: "Visbybold";
+  /* <-- This is what you should use */
   src: url(../fonts/visby/Visbybold.woff2);
 
 }
+
 @font-face {
-  font-family: "VisbyExtrabold"; /* <-- This is what you should use */
+  font-family: "VisbyExtrabold";
+  /* <-- This is what you should use */
   src: url(../fonts/visby/VisbyExtrabold.woff2);
 
 }
+
 @font-face {
-  font-family: "VisbyMedium"; /* <-- This is what you should use */
+  font-family: "VisbyMedium";
+  /* <-- This is what you should use */
   src: url(../fonts/visby/VisbyMedium.woff2);
 
 }
+
 @font-face {
-  font-family: "VisbyRegular"; /* <-- This is what you should use */
+  font-family: "VisbyRegular";
+  /* <-- This is what you should use */
   src: url(../fonts/visby/VisbyRegular.woff2);
 
 }
 
 @font-face {
-  font-family: "VisbyHeavy"; /* <-- This is what you should use */
+  font-family: "VisbyHeavy";
+  /* <-- This is what you should use */
   src: url(../fonts/visby/VisbyHeavy.woff2);
 
 }
 
 @font-face {
-  font-family: "Geraldica"; /* <-- This is what you should use */
+  font-family: "Geraldica";
+  /* <-- This is what you should use */
   src: url(../fonts/Geraldica.woff2);
 
 }
+
 @font-face {
-  font-family: "Dashing"; /* <-- This is what you should use */
+  font-family: "Dashing";
+  /* <-- This is what you should use */
   src: url(../fonts/Dashing.woff2);
 
-}@font-face {
-  font-family: "ViableLogic"; /* <-- This is what you should use */
+}
+
+@font-face {
+  font-family: "ViableLogic";
+  /* <-- This is what you should use */
   src: url(../fonts/ViableLogic.woff2);
 
 }
@@ -50,74 +67,104 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-} 
+}
 
 body {
-  font-family:'VisbySemibold';
+  font-family: 'VisbySemibold';
   background: #f8f8f8;
-  min-width:400px;
+  min-width: 400px;
 }
-main{
-  padding-top:15%;
+
+main {
+  padding-top: 15%;
 }
+
 /* NAVIGATION BAR */
 .navbar {
-  background-color: rgba(248, 248, 248, 0.65); /* semi-transparent */
-  backdrop-filter: blur(10px); /* apply blur to what's behind */
-  -webkit-backdrop-filter: blur(10px); /* for Safari support */
+  background-color: rgba(248, 248, 248, 0.65);
+  /* semi-transparent */
+  backdrop-filter: blur(10px);
+  /* apply blur to what's behind */
+  -webkit-backdrop-filter: blur(10px);
+  /* for Safari support */
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
- /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* optional: adds subtle shadow */
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* optional: adds subtle shadow */
 }
 
-  .special-txt {
-    font-family: 'Geraldica';
-    color: #d60029;
-  }
-  .nav-container {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0.75rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    padding-top: 2%;
-  }
-  
-  /* LOGO */
-  .nav-logo{
-    padding-left:2%;
-  }
-  .nav-logo a{
-    display: flex;
-    align-items: center;
-    height:2.5em;
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
-  }
-  
-  .nav-logo svg,
-  .nav-logo img {
-    width: auto;
-    height: clamp(100%, 4vw, 2.5em)
-  }
+.special-txt {
+  font-family: 'Geraldica';
+  color: #d60029;
+}
 
-.nav-logo:hover {
+.nav-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding-top: 0.5%;
+}
+
+/* LOGO */
+.nav-logo {
+  padding-left: 2%;
+  gap: 0.5rem;
+  /* space between icons */
+  cursor: pointer;
+}
+
+.nav-logo a {
+  display: flex;
+  align-items: center;
+  height: 2.5em;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.home a {
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.nav-logo svg,
+.nav-logo img {
+  width: auto;
+  height: clamp(100%, 4vw, 2.5em);
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.nav-logo:hover svg {
   transform: scale(1.05);
   cursor: pointer;
 }
 
+.nav-logo:hover svg path {
+  fill: #d60029;
+  /* hover color:, change as you like */
+}
+
+.home:hover svg path {
+  fill: #d60029;
+  /* hover color:, change as you like */
+  transform: scale(1.05);
+  cursor: pointer;
+
+}
+
 /* HAMBURGER MENU BUTTON */
 .nav-toggle {
- font-size: 1.5rem;
+  font-size: 1.5rem;
   background: none;
   border: none;
   cursor: pointer;
-  display: none; /* Default: hidden */
-  z-index: 1100;  /* Makes sure it stays above the menu */
+  display: none;
+  /* Default: hidden */
+  z-index: 1100;
+  /* Makes sure it stays above the menu */
 }
 
 /* NAV LINKS */
@@ -127,40 +174,45 @@ main{
   gap: 1.5rem;
   justify-content: center;
   grid-column: 2;
-  padding-right:5%;
+  padding-right: 5%;
 }
 
 .nav-links li a {
-   display: inline-block;
+  display: inline-block;
   text-decoration: none;
   color: #333;
   font-size: 1.2rem;
   transition: color 0.2s, transform 0.3s ease;
-font-family:'VisbyExtrabold';
+  font-family: 'VisbyExtrabold';
 }
 
 .nav-links li a:hover {
   color: #d60029;
-transform: scale(1.1);
+  transform: scale(1.1);
 }
-.icon:hover{
+
+.icon:hover {
   fill: #d60029;
 }
+
 h1.home-title {
   font-family: 'VisbyHeavy';
   text-align: center;
   color: #333;
   font-size: clamp(2rem, 6vw, 5em);
-  margin-top:2%;
+  margin-top: 2%;
+  padding-left:2em;
+  padding-right:2em;
 }
 
 .logo-intro {
   width: 100%;
- /* Full viewport height */
+  /* Full viewport height */
   display: flex;
   justify-content: center;
   align-items: center;
-  background: transparent; /* Optional: background color */
+  background: transparent;
+  /* Optional: background color */
 }
 
 .logo-intro video {
@@ -168,11 +220,143 @@ h1.home-title {
   height: auto;
   display: inline;
 }
+.bio-container {
+   width: 90%;
+  margin-top: 8%;
+  margin-left: 2.5%;
+  display: flex;
+  align-items: center; /* changed from flex-start to center */
+  gap: 2rem;
+}
+
+.bio-img {
+  flex: 0 0 30%;
+}
+
+.bio-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Optional: control text sizing and wrapping */
+.bio-text {
+  flex: 1; /* let it take remaining space */
+  font-size: clamp(0.6rem, 2vw, 1.5rem);
+}
+
+.color-name{
+  color: #d60029;
+}
 .social-icons {
   display: flex;
   gap: 1rem;
   align-items: center;
 }
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Section styling */
+.help-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.help-section h2 {
+  font-size: clamp(0.7rem, 2vw, 8rem);
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.help-section h2 span {
+  font-family: 'Geraldica', cursive;
+  font-weight: 400;
+  font-style: italic;
+  color:#007efc;
+}
+
+/* Card container */
+.cards {
+  display: flex;
+  flex-wrap: nowrap;             /* all cards in one row */
+  justify-content: space-between;
+  gap: 2rem;                      /* spacing between cards */
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+/* Individual card */
+.card {
+  flex: 0 0 calc((100% - 6rem) / 4); /* ensures 4 cards fit evenly with 3 gaps of 2rem */
+  padding: 2rem 2rem 1.5rem;
+  background: white;
+  border: 4px solid #111;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+}
+
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  height: 70px;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: clamp(0.6rem, 1.8vw, 1.5rem);
+  margin: 1rem 0 0.5rem;
+}
+
+.card hr {
+  width: 40%;
+  border: none;
+  height: 3px;
+  background-color: #333;
+  margin: 0 auto 1rem;
+}
+
+.card p {
+  font-size:clamp(0.4rem, 1vw, 1rem);
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Button */
+.btn {
+display: inline-block;
+  background: #8d8bff;
+  color: white;
+  padding: clamp(0.4rem, 1vw, 0.6rem) clamp(1rem, 3vw, 1.5rem);
+  font-size: clamp(0.6rem, 1vw, 1rem);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+  width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.btn:hover {
+  background: #5c59f7;
+}
+
 .site-footer {
   background-color: #fff;
   padding: 4rem 5%;
@@ -180,7 +364,7 @@ h1.home-title {
   font-size: 0.95rem;
   color: #111;
   border-top: 1px solid #eee;
-    margin-top:5%;
+  margin-top: 5%;
 }
 
 .footer-top {
@@ -222,7 +406,8 @@ h1.home-title {
 }
 
 .footer-right .highlight {
-  color: #7474ff; /* Purple-ish highlight */
+  color: #7474ff;
+  /* Purple-ish highlight */
 }
 
 .newsletter-form {
@@ -265,9 +450,9 @@ h1.home-title {
 
 .social-icons a img {
   width: 6.5%;
-  height:auto;
+  height: auto;
   margin-right: 1rem;
-  border-radius:10%;
+  border-radius: 10%;
 }
 
 .footer-links a {
@@ -279,11 +464,13 @@ h1.home-title {
   border-radius: 6px;
   text-decoration: none;
   font-size: 0.85rem;
-  transition: background 0.3s;
+  transition: background 0.3s, color 0.2s, transform 0.3s ease;
 }
 
 .footer-links a:hover {
-  background-color: #333;
+  background-color: #d60029;
+  color: #fff;
+  transform: scale(1.1);
 }
 
 
@@ -295,15 +482,18 @@ h1.home-title {
   .nav-logo {
     font-size: 1rem;
   }
-  .nav-logo img{
+
+  .nav-logo img {
     width: 75%;
   }
+
   .nav-links li a {
     font-size: 0.8rem;
   }
-  main{
-  padding-top:17%;
-}
+
+  main {
+    padding-top: 17%;
+  }
 
 }
 
@@ -316,15 +506,19 @@ h1.home-title {
     background: #f8f8f8;
     position: absolute;
     top: 60px;
-    left: 0;       /* aligned left */
-    width: 200px;  /* fixed width or adjust as needed */
+    left: 0;
+    /* aligned left */
+    width: 200px;
+    /* fixed width or adjust as needed */
     padding: 0 1rem;
     transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-    grid-column: 1 / span 1; /* make sure it only spans first column */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    grid-column: 1 / span 1;
+    /* make sure it only spans first column */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-size: 0.9rem;
-    
+
   }
+
   .nav-container {
     grid-template-columns: auto 1fr;
   }
@@ -332,16 +526,19 @@ h1.home-title {
   .nav-toggle {
     display: block;
   }
+
   .nav-links.active {
-    max-height: 500px; /* enough height */
+    max-height: 500px;
+    /* enough height */
     padding: 1rem;
     transition: max-height 0.4s ease-in, padding 0.4s ease-in;
   }
-    h1.home-title{
+
+  h1.home-title {
     font-size: 3.5rem;
   }
 
-    .footer-top {
+  .footer-top {
     flex-direction: column;
   }
 
@@ -352,17 +549,18 @@ h1.home-title {
 }
 
 
-                                                  /* MEDIA QURIES */
+/* MEDIA QURIES */
 /* Tablets */
 @media (min-width: 600px) {
   .container {
     padding: 2rem;
   }
 
-  .nav-logo img{
+  .nav-logo img {
     width: 80%;
   }
-    h1.home-title{
+
+  h1.home-title {
     font-size: 2.8rem;
   }
 }
@@ -374,6 +572,7 @@ h1.home-title {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
+
   .nav-toggle {
     display: block;
     order: 1;
@@ -382,11 +581,14 @@ h1.home-title {
   .nav-logo {
     order: 0;
   }
-  .nav-logo img{
+
+  .nav-logo img {
     width: 90%;
   }
+
   .nav-links {
-    top: 60px; /* make sure this is lower than logo/toggle */
+    top: 60px;
+    /* make sure this is lower than logo/toggle */
     z-index: 1000;
   }
 }
@@ -397,26 +599,55 @@ h1.home-title {
     display: none;
   }
 }
+@media (max-width: 900px) {
+    .social-icons a.insta dotlottie-player {
+    width: 68% !important;
+  }
+
+  .social-icons a.mailing dotlottie-player {
+    width: 15% !important;
+  }
+  .cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    flex: 1 1 40%;       /* each card takes up about 45% width */
+    max-width: 40%;
+  padding: 0.6rem 0.6rem 1rem;
+  align-items: center;
+  }
+.card img {
+  margin-bottom: 0.1rem;
+  padding: 0%;
+  height:clamp(3em, 5vw, 5em);
+}
+}
+
 
 @media (min-width: 900px) {
-    h1.home-title {
+  h1.home-title {
     font-size: 3.8em !important;
   }
 }
+
 @media (max-width: 991px) {
   .nav-links li a {
     font-size: 1rem;
   }
 }
+
 @media (min-width: 992px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
   .hero {
     font-size: 2.5rem;
   }
 
-    .nav-logo img{
+  .nav-logo img {
     width: 95%;
   }
 }
@@ -427,23 +658,32 @@ h1.home-title {
     margin: 0 auto;
   }
 
-    h1.home-title {
+  h1.home-title {
     font-size: 5em !important;
   }
 
 
-/* Hidden by default */
-.nav-toggle {
-  display: none;
-}
+  /* Hidden by default */
+  .nav-toggle {
+    display: none;
+  }
+
   .hero {
     font-size: 3rem;
   }
 }
+
 @media (max-width: 599px) {
   h1.home-title {
     font-size: 2rem !important;
   }
 }
+@media (max-width: 769px) {
+  .social-icons a.insta dotlottie-player {
+    width: 92% !important;
+  }
 
-
+  .social-icons a.mailing dotlottie-player {
+    width: 20% !important;
+  }
+}

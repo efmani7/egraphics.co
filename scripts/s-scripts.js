@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
   // ==== 1. DevTools Detection via Console Object Trick ====
-  let devtoolsOpened = false;
+ // let devtoolsOpened = false;
 
-  const element = new Image();
-  Object.defineProperty(element, 'id', {
-    get: function () {
-      devtoolsOpened = true;
-      window.location.href = 'https://www.google.com'; // Redirect if DevTools is inspected
-    }
-  });
-  console.log(element); // Triggers the getter when DevTools is open
+ // const element = new Image();
+ // Object.defineProperty(element, 'id', {
+ //   get: function () {
+  //    devtoolsOpened = true;
+  //    window.location.href = 'https://www.google.com'; // Redirect if DevTools is inspected
+  //  }
+  //});
+  //console.log(element); // Triggers the getter when DevTools is open
 
   // ==== 2. Disable Image Dragging ====
   document.querySelectorAll('img').forEach(img => {
@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // ==== 5. Redirect on Resize ====
-  window.addEventListener('resize', function () {
-    window.location.href = 'https://www.google.com/';
-  });
+ // window.addEventListener('resize', function () {
+  //  window.location.href = 'https://www.google.com/';
+  //});
 
   // ==== 6. Redirect on Meta Key (Command / Windows Key) Press ====
   window.addEventListener('keydown', function (e) {

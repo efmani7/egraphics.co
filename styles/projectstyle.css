@@ -1,46 +1,63 @@
 @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
 @font-face {
-  font-family: "VisbySemibold"; /* <-- This is what you should use */
+  font-family: "VisbySemibold";
+  /* <-- This is what you should use */
   src: url(../fonts/visby/VisbySemibold.woff2);
 }
+
 @font-face {
-  font-family: "Visbybold"; /* <-- This is what you should use */
+  font-family: "Visbybold";
+  /* <-- This is what you should use */
   src: url(../fonts/visby/Visbybold.woff2);
 
 }
+
 @font-face {
-  font-family: "VisbyExtrabold"; /* <-- This is what you should use */
+  font-family: "VisbyExtrabold";
+  /* <-- This is what you should use */
   src: url(../fonts/visby/VisbyExtrabold.woff2);
 
 }
+
 @font-face {
-  font-family: "VisbyMedium"; /* <-- This is what you should use */
+  font-family: "VisbyMedium";
+  /* <-- This is what you should use */
   src: url(../fonts/visby/VisbyMedium.woff2);
 
 }
+
 @font-face {
-  font-family: "VisbyRegular"; /* <-- This is what you should use */
+  font-family: "VisbyRegular";
+  /* <-- This is what you should use */
   src: url(../fonts/visby/VisbyRegular.woff2);
 
 }
 
 @font-face {
-  font-family: "VisbyHeavy"; /* <-- This is what you should use */
+  font-family: "VisbyHeavy";
+  /* <-- This is what you should use */
   src: url(../fonts/visby/VisbyHeavy.woff2);
 
 }
 
 @font-face {
-  font-family: "Geraldica"; /* <-- This is what you should use */
+  font-family: "Geraldica";
+  /* <-- This is what you should use */
   src: url(../fonts/Geraldica.woff2);
 
 }
+
 @font-face {
-  font-family: "Dashing"; /* <-- This is what you should use */
+  font-family: "Dashing";
+  /* <-- This is what you should use */
   src: url(../fonts/Dashing.woff2);
 
-}@font-face {
-  font-family: "ViableLogic"; /* <-- This is what you should use */
+}
+
+@font-face {
+  font-family: "ViableLogic";
+  /* <-- This is what you should use */
   src: url(../fonts/ViableLogic.woff2);
 
 }
@@ -50,78 +67,110 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-} 
+}
 
 body {
-  font-family:'VisbySemibold';
+  font-family: 'VisbySemibold';
   background: #f8f8f8;
-  min-width:400px;
+  min-width: 400px;
 }
-main{
-  padding-top:15%;
+
+main {
+  padding-top: 15%;
 }
+
 /* NAVIGATION BAR */
-.icon:hover{
-fill: #d60029;
+.icon:hover {
+  fill: #d60029;
 }
+
 .navbar {
-  background-color: rgba(248, 248, 248, 0.65); /* semi-transparent */
-  backdrop-filter: blur(10px); /* apply blur to what's behind */
-  -webkit-backdrop-filter: blur(10px); /* for Safari support */
+  background-color: rgba(248, 248, 248, 0.65);
+  /* semi-transparent */
+  backdrop-filter: blur(10px);
+  /* apply blur to what's behind */
+  -webkit-backdrop-filter: blur(10px);
+  /* for Safari support */
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
- /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* optional: adds subtle shadow */
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* optional: adds subtle shadow */
 }
 
 
-  .special-txt {
-    font-family: 'Geraldica';
-    color: #d60029;
-  }
-  .nav-container {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0.75rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    padding-top: 2%;
-  }
-  
-  /* LOGO */
-.nav-logo{
-    padding-left:2%;
-  }
-  .nav-logo a{
-    display: flex;
-    align-items: center;
-    height:2.5em;
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
-  }
-  
-  .nav-logo svg,
-  .nav-logo img {
-    width: auto;
-    height: clamp(100%, 4vw, 2.5em)
-  }
+.special-txt {
+  font-family: 'Geraldica';
+  color: #d60029;
+}
 
-.nav-logo:hover {
+.nav-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding-top: 0.5%;
+}
+
+
+/* LOGO */
+.nav-logo {
+  padding-left: 2%;
+  gap: 0.5rem;
+  /* space between icons */
+  cursor: pointer;
+}
+
+.nav-logo a {
+  display: flex;
+  align-items: center;
+  height: 2.5em;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.home a {
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.nav-logo svg,
+.nav-logo img {
+  width: auto;
+  height: clamp(100%, 4vw, 2.5em);
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.nav-logo:hover svg {
   transform: scale(1.05);
   cursor: pointer;
 }
 
+.nav-logo:hover svg path {
+  fill: #d60029;
+  /* hover color:, change as you like */
+}
+
+.home:hover svg path {
+  fill: #d60029;
+  /* hover color:, change as you like */
+  transform: scale(1.05);
+  cursor: pointer;
+
+}
+
 /* HAMBURGER MENU BUTTON */
 .nav-toggle {
- font-size: 1.5rem;
+  font-size: 1.5rem;
   background: none;
   border: none;
   cursor: pointer;
-  display: none; /* Default: hidden */
-  z-index: 1100;  /* Makes sure it stays above the menu */
+  display: none;
+  /* Default: hidden */
+  z-index: 1100;
+  /* Makes sure it stays above the menu */
 }
 
 /* NAV LINKS */
@@ -131,21 +180,21 @@ fill: #d60029;
   gap: 1.5rem;
   justify-content: center;
   grid-column: 2;
-  padding-right:5%;
+  padding-right: 5%;
 }
 
 .nav-links li a {
-   display: inline-block;
+  display: inline-block;
   text-decoration: none;
   color: #333;
   font-size: 1.2rem;
   transition: color 0.2s, transform 0.3s ease;
-font-family:'VisbyExtrabold';
+  font-family: 'VisbyExtrabold';
 }
 
 .nav-links li a:hover {
   color: #d60029;
-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 h1.project-title {
@@ -155,11 +204,13 @@ h1.project-title {
   font-size: clamp(2rem, 6vw, 5em);
   margin-top: 10%;
 }
+
 .social-icons {
   display: flex;
   gap: 1rem;
   align-items: center;
 }
+
 .site-footer {
   background-color: #fff;
   padding: 4rem 5%;
@@ -167,7 +218,7 @@ h1.project-title {
   font-size: 0.95rem;
   color: #111;
   border-top: 1px solid #eee;
-    margin-top:5%;
+  margin-top: 5%;
 }
 
 .footer-top {
@@ -209,7 +260,8 @@ h1.project-title {
 }
 
 .footer-right .highlight {
-  color: #7474ff; /* Purple-ish highlight */
+  color: #7474ff;
+  /* Purple-ish highlight */
 }
 
 .newsletter-form {
@@ -252,9 +304,9 @@ h1.project-title {
 
 .social-icons a img {
   width: 6.5%;
-  height:auto;
+  height: auto;
   margin-right: 1rem;
-  border-radius:10%;
+  border-radius: 10%;
 }
 
 .footer-links a {
@@ -266,34 +318,37 @@ h1.project-title {
   border-radius: 6px;
   text-decoration: none;
   font-size: 0.85rem;
-  transition: background 0.3s;
+  transition: background 0.3s, color 0.2s, transform 0.3s ease;
 }
 
 .footer-links a:hover {
-  background-color: #333;
+  background-color: #d60029;
+  color: #fff;
+  transform: scale(1.1);
 }
 
 
-.page-descript{
-  margin-top:2%;
+.page-descript {
+  margin-top: 2%;
   width: 50%;
-  margin-left:25%;
+  margin-left: 25%;
 }
 
-.page-descript p{
-  font-size:clamp(1rem, 2vw, 1.5rem);
+.page-descript p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
-.project-intro{
+.project-intro {
   text-align: center;
-  margin-top:5%;
-  font-size:clamp(1rem,5vw,2.8rem);
+  margin-top: 5%;
+  font-size: clamp(1rem, 5vw, 2.8rem);
 }
 
-.project-intro span{
-  color:#d60029;
+.project-intro span {
+  color: #d60029;
 
 }
+
 .projects-row {
   display: flex;
   flex-wrap: wrap;
@@ -314,8 +369,8 @@ h1.project-title {
   transform: translateY(20px);
   transition: transform 0.3s ease, opacity 0.6s ease;
   cursor: pointer;
-  margin-top:15%;
-  
+  margin-top: 15%;
+
 }
 
 /* When scrolled into view */
@@ -339,7 +394,7 @@ h1.project-title {
 
 /* Overlay text */
 .overlay-text {
-  position:absolute;
+  position: absolute;
   bottom: 1%;
   color: #333;
   padding: 0.5em 1em;
@@ -350,7 +405,7 @@ h1.project-title {
 }
 
 .left-text {
-  left:2%;
+  left: 2%;
 
 }
 
@@ -379,15 +434,18 @@ h1.project-title {
   .nav-logo {
     font-size: 1rem;
   }
-  .nav-logo img{
+
+  .nav-logo img {
     width: 75%;
   }
+
   .nav-links li a {
     font-size: 0.8rem;
   }
-main{
-  padding-top:17%;
-}
+
+  main {
+    padding-top: 17%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -399,15 +457,19 @@ main{
     background: #f8f8f8;
     position: absolute;
     top: 60px;
-    left: 0;       /* aligned left */
-    width: 200px;  /* fixed width or adjust as needed */
+    left: 0;
+    /* aligned left */
+    width: 200px;
+    /* fixed width or adjust as needed */
     padding: 0 1rem;
     transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-    grid-column: 1 / span 1; /* make sure it only spans first column */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    grid-column: 1 / span 1;
+    /* make sure it only spans first column */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-size: 0.9rem;
-    
+
   }
+
   .nav-container {
     grid-template-columns: auto 1fr;
   }
@@ -415,16 +477,19 @@ main{
   .nav-toggle {
     display: block;
   }
+
   .nav-links.active {
-    max-height: 500px; /* enough height */
+    max-height: 500px;
+    /* enough height */
     padding: 1rem;
     transition: max-height 0.4s ease-in, padding 0.4s ease-in;
   }
-    h1.project-title{
+
+  h1.project-title {
     font-size: 3.5rem;
   }
 
-     .footer-top {
+  .footer-top {
     flex-direction: column;
   }
 
@@ -435,17 +500,18 @@ main{
 }
 
 
-                                                  /* MEDIA QURIES */
+/* MEDIA QURIES */
 /* Tablets */
 @media (min-width: 600px) {
   .container {
     padding: 2rem;
   }
 
-  .nav-logo img{
+  .nav-logo img {
     width: 80%;
   }
-    h1.project-title{
+
+  h1.project-title {
     font-size: 2.8rem;
   }
 }
@@ -457,6 +523,7 @@ main{
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
+
   .nav-toggle {
     display: block;
     order: 1;
@@ -465,11 +532,14 @@ main{
   .nav-logo {
     order: 0;
   }
-  .nav-logo img{
+
+  .nav-logo img {
     width: 90%;
   }
+
   .nav-links {
-    top: 60px; /* make sure this is lower than logo/toggle */
+    top: 60px;
+    /* make sure this is lower than logo/toggle */
     z-index: 1000;
   }
 }
@@ -482,24 +552,34 @@ main{
 }
 
 @media (min-width: 900px) {
-    h1.project-title {
+  h1.project-title {
     font-size: 3.8em !important;
   }
 }
+
 @media (max-width: 991px) {
   .nav-links li a {
     font-size: 1rem;
   }
 }
+    .social-icons a.insta dotlottie-player {
+    width: 68% !important;
+  }
+
+  .social-icons a.mailing dotlottie-player {
+    width: 15% !important;
+  }
+
 @media (min-width: 992px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
   .hero {
     font-size: 2.5rem;
   }
 
-    .nav-logo img{
+  .nav-logo img {
     width: 95%;
   }
 }
@@ -510,23 +590,32 @@ main{
     margin: 0 auto;
   }
 
-    h1.project-title {
+  h1.project-title {
     font-size: 5em !important;
   }
 
 
-/* Hidden by default */
-.nav-toggle {
-  display: none;
-}
+  /* Hidden by default */
+  .nav-toggle {
+    display: none;
+  }
+
   .hero {
     font-size: 3rem;
   }
 }
+
 @media (max-width: 599px) {
   h1.project-title {
     font-size: 2rem !important;
   }
 }
+@media (max-width: 769px) {
+  .social-icons a.insta dotlottie-player {
+    width: 92% !important;
+  }
 
-
+  .social-icons a.mailing dotlottie-player {
+    width: 20% !important;
+  }
+}
