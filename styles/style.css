@@ -68,7 +68,16 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+img {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
 body {
   font-family: 'VisbySemibold';
   background: #f8f8f8;
