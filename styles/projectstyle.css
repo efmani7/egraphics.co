@@ -339,18 +339,19 @@ h1.project-title {
 
 .page-descript {
   margin-top: 2%;
-  width: 75%;
-  margin-left: 12.5%;
+  width:80%;
+  margin-left: 10%;
 }
 
 .page-descript p {
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(0.9rem, 2vw, 1.5rem);
+  text-align: justify;
 }
 
 .project-intro {
   text-align: center;
   margin-top: 5%;
-  font-size: clamp(1rem, 5vw, 2.8rem);
+  font-size: clamp(1.3rem, 3vw, 2.8rem);
 }
 
 .project-intro span {

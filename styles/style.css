@@ -380,8 +380,7 @@ display: inline-block;
   /* adjust as needed */
   flex-wrap: wrap;
   /* makes them stack on small screens */
-  height: 10vh;
-  margin-top: 5%;
+  
 }
 
 
@@ -406,8 +405,8 @@ display: inline-block;
 }
 
 .gif-btn img {
-  width: 50px;
-  height: 50px;
+  width:2.5em;
+  height:2.5em;
   transition: transform 0.2s ease;
 }
 
@@ -739,7 +738,7 @@ display: inline-block;
 
 @media (max-width: 599px) {
   h1.home-title {
-    font-size: 2rem !important;
+    font-size:clamp(1.2rem,1.6vw,1.5rem) !important;
   }
 }
 @media (max-width: 769px) {

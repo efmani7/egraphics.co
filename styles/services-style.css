@@ -275,7 +275,7 @@ h1.home-title {
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
-  margin-top: 5%;
+padding-bottom:0;
 }
 
 .services-section h2 {
