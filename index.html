@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>egraphics</title>
+  <title>Brand Designer</title>
   <link rel="stylesheet" href="styles/style.css" />
   <link rel="icon" href="images/egraphics/logo.png" type="image/x-icon">
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -64,7 +64,7 @@
     <h2>Hey, I’m <span class="color-name">Mani</span>, a Brand and Motion Designer with a style that’s anything but ordinary.</h2>
     <br>
     <p style="color:#5e5e5e;">
-      For over 5 years, I’ve been immersed in the world of design, blending visuals and movement to create work that connects, stands out, and tells a story.
+      For over 5 years, I’ve been immersed in the world of graphic design, blending visuals and movement to create work that connects, stands out, and tells a story.
 
       I’m driven by a deep passion for the craft the process, the detail, the emotion behind every frame and layout.
       To me, design isn’t just a job it’s how I bring ideas to life and push creative boundaries with every project.
@@ -76,7 +76,7 @@
   <h2 class="title">How I can <span>help</span> you<span style="color: #d60029;">!</span> </h2>
   <div class="cards">
     <div class="card">
-      <img src="images/icons/branding.svg" alt="Package" />
+      <img src="images/icons/branding.svg" alt="Packages" />
       <h3>Strong Branding</h3>
       <hr />
       <p>Crafting a bold and memorable identity that speaks directly to your audience and sets you apart in a crowded market.</p>
@@ -110,8 +110,34 @@
 
 
     </div>
+
+      <div class="gif-btn-wrapper">
+        <!-- GIF Button (right) -->
+        <a href="projects.html" class="gif-btn" id="gifBtn">
+          See my work!
+          <img src="lotties/project-smiley/static-smiley.png" data-hover="lotties/project-smiley/smiley-gif.gif"
+            data-default="lotties/project-smiley/static-smiley.png" alt="Hover Button" id="gifButton">
+        </a>
+      </div>
   </main>
 
+  <!-- Script for Hover GIF -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const gifBtn = document.getElementById("gifBtn");
+      const gifImg = document.getElementById("gifButton");
+
+      if (gifBtn && gifImg) {
+        gifBtn.addEventListener('mouseenter', () => {
+          gifImg.src = gifImg.getAttribute('data-hover');
+        });
+
+        gifBtn.addEventListener('mouseleave', () => {
+          gifImg.src = gifImg.getAttribute('data-default');
+        });
+      }
+    });
+  </script>
   <!-- Nav Toggle Script -->
   <script>
     const toggleBtn = document.querySelector('.nav-toggle');

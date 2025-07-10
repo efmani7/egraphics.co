@@ -361,6 +361,57 @@ display: inline-block;
   background: #5c59f7;
 }
 
+
+/* Projects Gif Button with Link */
+.gif-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  /* adjust as needed */
+  flex-wrap: wrap;
+  /* makes them stack on small screens */
+  height: 10vh;
+  margin-top: 5%;
+}
+
+
+/* Make the link look like a button */
+.gif-btn {
+  background-color: #007df9;
+  border: 2px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  /* vertical centering */
+  gap: 10px;
+  /* space between text and image */
+  color: #fff;
+  font-family: 'VisbySemibold', sans-serif;
+  font-size: clamp(0.7rem, 1vw, 1.5rem);
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  user-select: none;
+}
+
+.gif-btn img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.2s ease;
+}
+
+/* Scale whole button on hover */
+.gif-btn:hover {
+  transform: scale(1.1);
+  background-color: #d60029;
+  color: #fff;
+}
+
+.gif-btn-wrapper a {
+  text-decoration: none;
+}
 .site-footer {
   background-color: #fff;
   padding: 4rem 5%;
