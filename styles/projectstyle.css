@@ -563,11 +563,11 @@ h1.project-title {
   }
 }
     .social-icons a.insta dotlottie-player {
-    width: 68% !important;
+    width: 49% !important;
   }
 
   .social-icons a.mailing dotlottie-player {
-    width: 15% !important;
+    width: 12% !important;
   }
 
 @media (min-width: 992px) {

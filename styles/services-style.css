@@ -261,20 +261,21 @@ h1.home-title {
 }
 
 /* Section styling */
-.help-section {
+.services-section {
   padding: 4rem 2rem;
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: 5%;
 }
 
-.help-section h2 {
+.services-section h2 {
   font-size: clamp(0.7rem, 2vw, 8rem);
   font-weight: 700;
   margin-bottom: 2rem;
 }
 
-.help-section h2 span {
+.services-section h2 span {
   font-family: 'Geraldica', cursive;
   font-weight: 400;
   font-style: italic;
@@ -282,7 +283,7 @@ h1.home-title {
 }
 
 /* Card container */
-.cards {
+.services-cards {
   display: flex;
   flex-wrap: nowrap;             /* all cards in one row */
   justify-content: space-between;
@@ -295,35 +296,37 @@ h1.home-title {
 
 
 /* Individual card */
-.card {
+.services-card {
   flex: 0 0 calc((100% - 6rem) / 4); /* ensures 4 cards fit evenly with 3 gaps of 2rem */
   padding: 2rem 2rem 1.5rem;
-  background: white;
-  border: 4px solid #111;
-  border-radius: 10px;
+  background: rgb(248, 248, 248);
+    border-radius: 10px;
+   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.3s ease;
   box-sizing: border-box;
+  text-align: center;
+  align-items: center;
 }
 
 
-.card:hover {
+.services-card:hover {
   transform: translateY(-5px);
 }
 
-.card img {
+.services-card img {
   height: 70px;
   margin-bottom: 1rem;
 }
 
-.card h3 {
+.services-card h3 {
   font-size: clamp(0.6rem, 1.8vw, 1.5rem);
   margin: 1rem 0 0.5rem;
 }
 
-.card hr {
+.services-card hr {
   width: 40%;
   border: none;
   height: 3px;
@@ -331,16 +334,12 @@ h1.home-title {
   margin: 0 auto 1rem;
 }
 
-.card p {
+.services-card p {
   font-size:clamp(0.4rem, 1vw, 1rem);
   color: #333;
   margin-bottom: 1.5rem;
 }
-.cards a{
-  text-align: center;
-  align-self: center;
-  align-items: center;
-}
+
 /* Button */
 .btn {
 display: inline-block;
@@ -360,7 +359,18 @@ display: inline-block;
 .btn:hover {
   background: #5c59f7;
 }
+.lottie-wrapper{
+ width: 100%;
+    display: flex; /* Make the wrapper a flex container */
+    align-items: center; /* Center children vertically */
+    justify-content: center; /* Center children horizontally */
+    margin-bottom: -1%;
+}
 
+.searchLottie{
+    width:20%;
+    margin-bottom: 0;
+}
 .site-footer {
   background-color: #fff;
   padding: 4rem 5%;
@@ -368,7 +378,7 @@ display: inline-block;
   font-size: 0.95rem;
   color: #111;
   border-top: 1px solid #eee;
-  margin-top: 5%;
+  margin-top:0%;
 }
 
 .footer-top {
@@ -611,18 +621,18 @@ display: inline-block;
   .social-icons a.mailing dotlottie-player {
     width: 15% !important;
   }
-  .cards {
+  .services-cards {
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  .card {
+  .services-card {
     flex: 1 1 40%;       /* each card takes up about 45% width */
     max-width: 40%;
   padding: 0.6rem 0.6rem 1rem;
   align-items: center;
   }
-.card img {
+.services-card img {
   margin-bottom: 0.1rem;
   padding: 0%;
   height:clamp(3em, 5vw, 5em);
