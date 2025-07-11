@@ -46,10 +46,24 @@
   </nav>
 
   <main>
-    <div class="logo-intro">
-      <lottie-player src="https://lottie.host/5ae5e0dc-73d3-4a5e-9994-61be2137624f/44nrcKpNbq.json"
-        background="transparent" speed="1" autoplay style="width: 40%; height:auto;"></lottie-player>
+  <div class="hero-container">
+  <img src="images/egraphics/landing-img.jpg" alt="" class="background-img" />
+ <h1 class="main-heading">Strategic Designs</h1>
+  <div class="overlay-content">
+    <lottie-player 
+      src="https://lottie.host/5ae5e0dc-73d3-4a5e-9994-61be2137624f/44nrcKpNbq.json"
+      background="transparent"
+      speed="1"
+      autoplay
+      class="logo-animation"
+    ></lottie-player>
+
+    <div class="overlay-text">
+      <h1>Animated Impact. Branded Precision.</h1>
+      <p>Making Brands Unforgettable—Frame by Frame.</p>
     </div>
+  </div>
+</div>
 
     <h1 class="home-title">
       Helping <span class="special-txt">brands</span> discover their true potential <br>
@@ -63,7 +77,7 @@
   <div class="bio-text"> 
     <h2>Hey, I’m <span class="color-name">Mani</span>, a Brand and Motion Designer with a style that’s anything but ordinary.</h2>
     <br>
-    <p style="color:#5e5e5e;">
+    <p>
       For over 5 years, I’ve been immersed in the world of graphic design, blending visuals and movement to create work that connects, stands out, and tells a story.
 
       I’m driven by a deep passion for the craft the process, the detail, the emotion behind every frame and layout.
@@ -71,6 +85,89 @@
     </p>
   </div>
 </div>
+
+<section class="features-wrapper">
+  <div class="features-left">
+    <div class="feature-item">
+      <img src="icons/estate-icon.svg" alt="" class="icon">
+      <div class="text">
+        <h3>Creative Direction with Purpose</h3>
+        <p>Designs that connect, communicate, and convert.</p>
+      </div>
+    </div>
+
+    <div class="feature-item">
+      <img src="icons/payment-icon.svg" alt="" class="icon">
+      <div class="text">
+        <h3>Real-Time Visual Impact</h3>
+        <p>Every asset delivers instant clarity and lasting impression.</p>
+      </div>
+    </div>
+  <div class="feature-item">
+      <img src="icons/payment-icon.svg" alt="" class="icon">
+      <div class="text">
+        <h3>Unified Brand Experience</h3>
+        <p>From social to print—cohesive, consistent, and compelling.</p>
+      </div>
+    </div>  <div class="feature-item">
+      <img src="icons/payment-icon.svg" alt="" class="icon">
+      <div class="text">
+        <h3>Flexible Design Solutions</h3>
+        <p>Tailored graphics that adapt to any platform or client need.</p>
+      </div>
+    </div>  <div class="feature-item">
+      <img src="icons/payment-icon.svg" alt="" class="icon">
+      <div class="text">
+        <h3>Streamlined Workflow</h3>
+        <p>Fast turnarounds. Clear communication. No guesswork.</p>
+      </div>
+    </div>  
+    
+    <div class="feature-item">
+      <img src="icons/payment-icon.svg" alt="" class="icon">
+      <div class="text">
+        <h3>Modern Tools. Mastered.</h3>
+        <p>Skilled in industry-leading tools, trends, and techniques.</p>
+      </div>
+    </div>
+
+     <div class="feature-item">
+      <img src="icons/payment-icon.svg" alt="" class="icon">
+      <div class="text">
+        <h3>Certified Craftsmanship</h3>
+        <p>Designs built with strategy, backed by experience, and trusted by brands.
+
+</p>
+      </div>
+    </div>
+    <!-- Add more feature items here -->
+     
+  </div>
+
+
+<div class="features-right">
+  <img
+    data-src="animations/Values.gif"
+    src=""
+    alt="Demo GIF"
+    class="feature-gif"
+    id="featureGif"
+  >
+  <img
+    src="images/egraphics/Values.png"
+    alt="Static Image"
+    class="feature-static"
+    id="fallbackImage"
+    style="display: none;"
+  >
+</div>
+
+
+</section>
+
+
+  <!-- Repeat for the rest -->
+</section>
 
 <section class="help-section">
   <h2 class="title">How I can <span>help</span> you<span style="color: #d60029;">!</span> </h2>
@@ -120,6 +217,55 @@
         </a>
       </div>
   </main>
+  
+  <!-- Script for Gif values -->
+<script>
+  const gif = document.getElementById('featureGif');
+  const fallback = document.getElementById('fallbackImage');
+  let hasPlayed = false;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hasPlayed) {
+        gif.src = gif.getAttribute('data-src');
+        hasPlayed = true;
+        observer.unobserve(gif);
+
+        // Listen for the GIF to end
+        // Note: For GIFs, there isn't a direct 'ended' event like video.
+        // We rely on a timed duration (2018ms).
+        setTimeout(() => {
+          // Start fading out the GIF
+          gif.style.opacity = '0';
+
+          // After the fade-out transition, hide the GIF completely and show the fallback
+          setTimeout(() => {
+            gif.style.display = 'none'; // Remove GIF from layout
+            fallback.style.display = 'block'; // Make fallback visible in layout
+            setTimeout(() => {
+              fallback.style.opacity = '1'; // Start fading in the fallback
+            }, 5); // Small delay to ensure 'display: block' has applied
+          }, 60); // This delay should match the 'transition' duration in your CSS for opacity (e.g., 0.5s = 500ms)
+
+        }, 2017); // This is the GIF duration in milliseconds. Make sure it's accurate!
+      }
+    });
+  }, { threshold: 0.5 }); // Adjust threshold as needed, 0.5 means 50% of the GIF is visible
+
+  observer.observe(gif);
+</script>
+
+
+
+
+
+   <!-- Script for Lottie intro -->
+<script>
+  const player = document.querySelector('.logo-animation');
+  window.addEventListener('load', () => {
+    player.play(); // Plays only once on page load
+  });
+</script>
 
   <!-- Script for Hover GIF -->
   <script>
@@ -174,7 +320,7 @@
     <div class="footer-top">
       <div class="footer-left">
         <p>egraphics co.</p>
-        <p>eastern mainroad barataria</p>
+        <p>Trinidad and Tobago</p>
         <p>Copyright egraphics co. All Rights Reserved 2025</p>
       </div>
     </div>
