@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+/*document.addEventListener('DOMContentLoaded', function () {
   // ==== Device Check ====
   const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // ==== 5. Redirect on Resize (Desktop Only) ====
+  // ==== 5. Redirect on Resize (Desktop Only) ==== 
   let initialWidth = window.innerWidth;
   let initialHeight = window.innerHeight;
 
@@ -66,3 +66,4 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 });
+*/

@@ -81,7 +81,7 @@ img {
 body {
   font-family: 'VisbySemibold';
   background: #f8f8f8;
-  min-width: 400px;
+  min-width: 500px;
 }
 
 main {
@@ -105,7 +105,7 @@ main {
 
 .special-txt {
   font-family: 'Geraldica';
-  color: #d60029;
+  color: #007df9;
 }
 
 .nav-container {
@@ -210,8 +210,8 @@ h1.home-title {
   color: #333;
   font-size: clamp(2rem, 6vw, 4.5em);
   margin-top: 2%;
-  padding-left:2em;
-  padding-right:2em;
+  padding-left:1em;
+  padding-right:1em;
 }
 
 .logo-intro {
@@ -250,7 +250,7 @@ h1.home-title {
   left: 80%;
   transform: translateX(-50%);
   color: white;
-  font-size: clamp(2rem, 6vw, 6rem);
+  font-size: clamp(2rem, 6vw, 8rem);
   font-weight: 800;
   text-align: left;
   text-shadow: 0 0 20px rgba(0,0,0,0.7);
@@ -289,10 +289,15 @@ h1.home-title {
 }
 
 .overlay-text p {
-  font-size: clamp(0.8em, 1.4vw,1.2em);
+  font-size: clamp(0.8em, 1.4vw,2.2em);
   opacity: 0.9;
   color: #ffffff;
    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+   margin-bottom:10%;
+  
+}
+.color-name{
+  color: #1b1b1b;
 }
 /* Home Landing img end*/
 .bio-container {
@@ -301,7 +306,7 @@ h1.home-title {
   display: flex;
   align-items: center; /* changed from flex-start to center */
   gap: 2rem;
-  background-color: #082e53;
+  background-color: #d60029;
 }
 
 .bio-img {
@@ -319,101 +324,101 @@ h1.home-title {
   flex: 1; /* let it take remaining space */
   font-size: clamp(0.6rem, 2vw, 1.5rem);
   color: #ffffff;
+  line-height: 2;
 }
+
 .features-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: flex-start;
-  gap: 1rem;
-  padding: 2rem;
-  max-width:80%;
+  gap: 2rem;
+  padding: 5% 5%;
+  max-width: 90%;
   margin: 0 auto;
-  flex-wrap: wrap;
 }
 
 .features-left {
-  flex: 1 1 60%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
-.features-right {
-  flex: 1 1 35%;
-  height:0;
-  position: relative; /*  NEW: This makes it a positioning context for absolute children */
-  overflow: hidden; /* Good practice to prevent content spilling out */
-  padding-top: 56.25%;
-  margin:0;
-  aspect-ratio: 16/9;
-}
-.feature-gif {
-  max-width: 100%; /* Keep this for responsiveness within flex item */
-  height: auto; /* Keep this for responsiveness within flex item */
-  border-radius: 8px;
-
-  /*  NEW: Position it relative to .features-right */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* Make it fill the parent's width */
-  height: 100%; /* Make it fill the parent's height */
-  object-fit: contain; /* Or 'cover' depending on how you want scaling */
-  z-index: 2; /* Ensure GIF is on top initially */
-  transition: opacity 0.5s ease-in-out; /* For a smooth fade */
-}
 .feature-item {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-}
-.feature-static {
-  /* It should match the GIF's positioning and sizing */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Match the GIF's object-fit */
-  border-radius: 8px; /* Match GIF's border-radius */
-  z-index: 1; /* Place it below the GIF */
-  transition: opacity 0.5s ease-in-out; /* For a smooth fade */
-
-  /* Initial state will be controlled by JS (display: none via inline style is fine) */
+  gap: 1.5rem;
 }
 
-
-.features-right::before {
-    content: '';
-    display: block;
-    padding-top: 56.25%; /* For a 16:9 aspect ratio (adjust as needed for your GIF) */
-    /* If your GIF has a different aspect ratio, calculate it: (height / width) * 100% */
-}
 .icon {
-  width: 32px;
-  height: 32px;
+  width: 10vw;
+  height: 10vh;
   flex-shrink: 0;
-  margin-top: 0.2rem;
 }
 
 .text h3 {
-  margin: 0;
-  font-size: clamp(1em,2.5vw,2.5em);
-  font-family:'VisbyMedium', sans-serif;
+  margin: 0 0 0.25rem;
+  font-size: clamp(1.25rem, 3.2vw, 3rem);
+  font-family: 'VisbyMedium', sans-serif;
 }
 
 .text p {
-  margin: 0.25rem 0 0;
-  font-size: 1rem;
+  margin: 0;
+  font-size: clamp(0.7rem, 2vw, 2rem);
   color: #444;
+  line-height: 1.5;
+}
+
+.features-right {
+  display: flex;
+  justify-content: center;
+   width: 90%;
+  margin: 0 auto;
+  aspect-ratio: 1 / 1; /* For square shape like your 800x800 */
+  position: relative;
+}
+
+.feature-gif,
+.feature-static {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 90vh;
+
+  object-fit: contain;
+  border-radius: 12px;
+  transition: opacity 0.5s ease-in-out;
 }
 
 a {
   text-decoration: underline;
   color: #000;
 }
+.explore{
+  background-color:#7474ff;
+  color: #ffffff;
+  width:10vw;
+  height:5vh;
+  font-family:'VisbyMedium', sans-serif ;
+  border: none;
+  border-radius: 0.3em;
+  font-size: clamp(1.5em, 1.8vw,2em);
+  transition: transform 0.3s ease;
+position: relative;
+}
+.explore-btn{
+align-items: center;
+width: 100%;
+align-items: center;
+justify-content: center;
+margin-left:44.5%;
+margin-top: 5%;
+position: relative;
+}
 
-.color-name{
-  color: #d60029;
+.explore:hover{
+  background-color: #007efc;
+  transform: scale(1.08);
 }
 .social-icons {
   display: flex;
@@ -427,12 +432,46 @@ a {
   padding: 0;
 }
 
+/* Section styling for .stats */
+.stats {
+  width: 100%;
+
+  position: relative; /* CRUCIAL: For absolute positioning of images */
+    margin: 0 auto; /* Center the section */
+    aspect-ratio: 16 / 9; 
+    margin-bottom: -10%;
+    padding-bottom: -10%;
+    margin-top: -10%;
+}
+
+.stats img {
+width:100%;
+    margin: 0;
+    padding: 0;
+}
+
+.counter-gif,
+.counter-static {
+  transition: opacity 0.5s ease-in-out;
+  /* CRUCIAL: Position absolute for layering */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Fill the .stats container */
+  object-fit: contain; /* Ensure image fits within bounds */
+  display: block; /* Important for JS to control opacity/display */
+  margin: 0 auto; /* No need for margin if absolute */
+}
+
+
 /* Section styling */
 .help-section {
   padding: 4rem 2rem;
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
+  padding-top:0;
 }
 
 .help-section h2 {
@@ -466,7 +505,7 @@ a {
   flex: 0 0 calc((100% - 6rem) / 4); /* ensures 4 cards fit evenly with 3 gaps of 2rem */
   padding: 2rem 2rem 1.5rem;
   background: white;
-  border: 4px solid #111;
+  border: 0.2em solid #111;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -719,6 +758,46 @@ display: inline-block;
 }
 
 @media (max-width: 768px) {
+    .features-wrapper {
+    display: flex;               /* change from grid to flex */
+    flex-direction: column;     /* stack vertically */
+    align-items: center;
+    gap: 0.1rem;
+  }
+
+  .features-left,
+  .features-right {
+    width: 100%;
+  }
+
+  .features-right {
+    margin-top: 5%;
+    padding-top: 0;
+    order: 2;
+    margin-bottom:25%;
+    z-index:0;
+  }
+
+  .features-left {
+    order: 1;
+  }
+
+  .feature-gif,
+  .feature-static {
+    width: 100%;
+    max-height: 600px;
+  }
+ .icon {
+    width: 15vw;       /* Adjust to look balanced on smaller screens */
+    height: auto;      /* Let it scale naturally */
+    max-height: 60px;  /* Prevent it from being too tall */
+    align-self: flex-start; /* Prevent extra vertical centering */
+  }
+
+  .feature-item {
+    align-items: flex-start;
+  }
+
   .nav-links {
     max-height: 0;
     overflow: hidden;
@@ -820,7 +899,11 @@ display: inline-block;
     display: none;
   }
 }
+
+/* Mobile responsive stack */
+
 @media (max-width: 900px) {
+   
     .social-icons a.insta dotlottie-player {
     width: 68% !important;
   }
@@ -873,6 +956,10 @@ display: inline-block;
   }
 }
 
+@media(max-width: 1200px){
+
+}
+
 @media (min-width: 1200px) {
   .container {
     max-width: 1200px;
@@ -896,10 +983,11 @@ display: inline-block;
 
 @media (max-width: 599px) {
   h1.home-title {
-    font-size:clamp(1.2rem,1.6vw,1.5rem) !important;
+    font-size:clamp(1rem,6vw,1.8rem) !important;
   }
 }
 @media (max-width: 769px) {
+
   .social-icons a.insta dotlottie-player {
     width: 92% !important;
   }

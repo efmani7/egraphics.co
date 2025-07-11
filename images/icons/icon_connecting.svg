@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 220 220">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #007df9;
+        fill-rule: evenodd;
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #230113;
+        stroke-width: 12px;
+      }
+    </style>
+  </defs>
+  <g id="Artboard-Copy-7">
+    <path id="Fill-53" class="cls-1" d="M104.1,62.6c-1.7,4.1-4.5,7.6-8,10.2l36.1,28.2c1.7-4.1,4.5-7.6,8-10.2,0,0-36.1-28.2-36.1-28.2Z"/>
+    <path id="Fill-55" class="cls-1" d="M104.1,158l36.1-28.2c-3.5-2.6-6.3-6.1-8-10.2l-36.1,28.2c3.5,2.6,6.3,6.1,8,10.2"/>
+    <circle id="Oval" class="cls-2" cx="82.5" cy="52.5" r="12.5"/>
+    <circle id="Oval-2" class="cls-2" cx="154.5" cy="110.5" r="12.5"/>
+    <circle id="Oval-3" class="cls-2" cx="80.5" cy="167.5" r="12.5"/>
+  </g>
+</svg>

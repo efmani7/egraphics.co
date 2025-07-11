@@ -85,11 +85,11 @@
     </p>
   </div>
 </div>
-
-<section class="features-wrapper">
+ 
+<section class="features-wrapper icon-list-image">
   <div class="features-left">
     <div class="feature-item">
-      <img src="icons/estate-icon.svg" alt="" class="icon">
+      <img src="images/icons/icon_open_direction.svg" alt="" class="icon">
       <div class="text">
         <h3>Creative Direction with Purpose</h3>
         <p>Designs that connect, communicate, and convert.</p>
@@ -97,26 +97,26 @@
     </div>
 
     <div class="feature-item">
-      <img src="icons/payment-icon.svg" alt="" class="icon">
+      <img src="images/icons/icon_gateway.svg" alt="" class="icon">
       <div class="text">
         <h3>Real-Time Visual Impact</h3>
         <p>Every asset delivers instant clarity and lasting impression.</p>
       </div>
     </div>
   <div class="feature-item">
-      <img src="icons/payment-icon.svg" alt="" class="icon">
+      <img src="images/icons/icon_endpoint_management.svg" alt="" class="icon">
       <div class="text">
         <h3>Unified Brand Experience</h3>
         <p>From social to print—cohesive, consistent, and compelling.</p>
       </div>
     </div>  <div class="feature-item">
-      <img src="icons/payment-icon.svg" alt="" class="icon">
+      <img src="images/icons/icon_connecting_systems.svg" alt="" class="icon">
       <div class="text">
         <h3>Flexible Design Solutions</h3>
         <p>Tailored graphics that adapt to any platform or client need.</p>
       </div>
     </div>  <div class="feature-item">
-      <img src="icons/payment-icon.svg" alt="" class="icon">
+      <img src="images/icons/icon_connecting.svg" alt="" class="icon">
       <div class="text">
         <h3>Streamlined Workflow</h3>
         <p>Fast turnarounds. Clear communication. No guesswork.</p>
@@ -124,7 +124,7 @@
     </div>  
     
     <div class="feature-item">
-      <img src="icons/payment-icon.svg" alt="" class="icon">
+      <img src="images/icons/icon_upwards_trend.svg" alt="" class="icon">
       <div class="text">
         <h3>Modern Tools. Mastered.</h3>
         <p>Skilled in industry-leading tools, trends, and techniques.</p>
@@ -132,7 +132,7 @@
     </div>
 
      <div class="feature-item">
-      <img src="icons/payment-icon.svg" alt="" class="icon">
+      <img src="images/icons/certifed-style.svg" alt="" class="icon">
       <div class="text">
         <h3>Certified Craftsmanship</h3>
         <p>Designs built with strategy, backed by experience, and trusted by brands.
@@ -144,29 +144,47 @@
      
   </div>
 
-
 <div class="features-right">
-  <img
-    data-src="animations/Values.gif"
-    src=""
-    alt="Demo GIF"
-    class="feature-gif"
-    id="featureGif"
-  >
-  <img
-    src="images/egraphics/Values.png"
-    alt="Static Image"
-    class="feature-static"
-    id="fallbackImage"
-    style="display: none;"
-  >
-</div>
+  <div class="image-wrapper">
+    <img
+      data-src="animations/Values.gif"
+      src=""
+      alt="Animated graphic..."
+      class="feature-gif"
+      id="featureGif"
+      style="display: none; opacity: 0;" />
+    <img
+      src="images/egraphics/Values.png"
+      alt="Static graphic..."
+      class="feature-static"
+      id="fallbackImage"
+      style="display: none; opacity: 0;" />
+  </div>
 
+  
+</div>
 
 </section>
 
-
   <!-- Repeat for the rest -->
+</section>
+
+<section class="stats">
+  <img
+    data-src="animations/counter.gif"
+    src=""
+    alt="Animated stats showing data metrics and growth."
+    class="counter-gif"
+    id="counterGif"
+    style="display: none; opacity: 0;"
+  />
+  <img
+    src="images/egraphics/counter.jpg"
+    alt="Static image summarizing data metrics and growth."
+    class="counter-static"
+    id="counterFallback"
+    style="display: none; opacity: 0;"
+  />
 </section>
 
 <section class="help-section">
@@ -217,42 +235,138 @@
         </a>
       </div>
   </main>
-  
+  <!-- Script for Gif counter -->
+<script>
+  const counterGif = document.getElementById('counterGif');
+  const counterFallback = document.getElementById('counterFallback');
+  const statsContainer= document.querySelector('.stats');
+  let counterHasPlayed = false;
+
+  // Initial state is hidden for both in HTML: style="display: none; opacity: 0;"
+
+  const observer2 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      // Check if the container is intersecting and the GIF hasn't played yet
+      if (entry.isIntersecting && !counterHasPlayed) {
+        counterHasPlayed = true; // Mark as played immediately to prevent re-triggering
+
+        // Stop observing once it's in view and ready to play
+        observer.unobserve(statsContainer); // Observe the container, unobserve the container
+
+        // Step 1: Make GIF visible (display: block) then fade it in
+        counterGif.style.display = 'block';
+        void counterGif.offsetWidth; // Force reflow
+        counterGif.style.opacity = '1'; // Start fade in of GIF
+
+        // Step 2: Load the GIF source
+        counterGif.src = counterGif.getAttribute('data-src');
+
+        const transitionToFallback = () => {
+          // Start fading out the GIF AND fading in the fallback simultaneously
+          counterGif.style.opacity = '0';      // GIF starts to fade out
+          counterFallback.style.display = 'block'; // Ensure fallback is in the layout
+          void counterFallback.offsetWidth;    // Force reflow for fallback
+          counterFallback.style.opacity = '1'; // Fallback starts to fade in
+
+          // After the transition (0.5s in your CSS), hide the GIF completely
+          setTimeout(() => {
+            counterGif.style.display = 'none';
+          }, 500); // This delay should match your CSS transition duration
+        };
+
+        const startGifPlaybackTimer = () => {
+             // Only start the timer if the GIF actually loads successfully
+             setTimeout(transitionToFallback, 1020); // GIF duration
+        };
+
+        // Handle cases where GIF might be in browser cache
+        if (counterGif.complete) {
+          startGifPlaybackTimer();
+        } else {
+          counterGif.onload = startGifPlaybackTimer;
+          // Add onerror to handle failed GIF loads gracefully, and just show fallback
+          counterGif.onerror = () => {
+            console.error('Failed to load GIF, displaying static image.');
+            counterGif.style.display = 'none';
+            counterFallback.style.display = 'block';
+            void counterFallback.offsetWidth;
+            counterFallback.style.opacity = '1'; // Ensure fallback is visible
+            counterHasPlayed = true; // Mark as played to prevent re-attempts
+          };
+        }
+      }
+    });
+  }, { threshold: 0 }); // *** CHANGED: threshold to 0 ***
+
+  // Start observing the container element
+  observer2.observe(statsContainer);
+</script>
+
   <!-- Script for Gif values -->
 <script>
   const gif = document.getElementById('featureGif');
   const fallback = document.getElementById('fallbackImage');
+  const featuresRightContainer = document.querySelector('.features-right');
   let hasPlayed = false;
+
+  // Initial state is hidden for both in HTML: style="display: none; opacity: 0;"
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
+      // Check if the container is intersecting and the GIF hasn't played yet
       if (entry.isIntersecting && !hasPlayed) {
+        hasPlayed = true; // Mark as played immediately to prevent re-triggering
+
+        // Stop observing once it's in view and ready to play
+        observer.unobserve(featuresRightContainer); // Observe the container, unobserve the container
+
+        // Step 1: Make GIF visible (display: block) then fade it in
+        gif.style.display = 'block';
+        void gif.offsetWidth; // Force reflow
+        gif.style.opacity = '1'; // Start fade in of GIF
+
+        // Step 2: Load the GIF source
         gif.src = gif.getAttribute('data-src');
-        hasPlayed = true;
-        observer.unobserve(gif);
 
-        // Listen for the GIF to end
-        // Note: For GIFs, there isn't a direct 'ended' event like video.
-        // We rely on a timed duration (2018ms).
-        setTimeout(() => {
-          // Start fading out the GIF
-          gif.style.opacity = '0';
+        const transitionToFallback = () => {
+          // Start fading out the GIF AND fading in the fallback simultaneously
+          gif.style.opacity = '0';      // GIF starts to fade out
+          fallback.style.display = 'block'; // Ensure fallback is in the layout
+          void fallback.offsetWidth;    // Force reflow for fallback
+          fallback.style.opacity = '1'; // Fallback starts to fade in
 
-          // After the fade-out transition, hide the GIF completely and show the fallback
+          // After the transition (0.5s in your CSS), hide the GIF completely
           setTimeout(() => {
-            gif.style.display = 'none'; // Remove GIF from layout
-            fallback.style.display = 'block'; // Make fallback visible in layout
-            setTimeout(() => {
-              fallback.style.opacity = '1'; // Start fading in the fallback
-            }, 5); // Small delay to ensure 'display: block' has applied
-          }, 60); // This delay should match the 'transition' duration in your CSS for opacity (e.g., 0.5s = 500ms)
+            gif.style.display = 'none';
+          }, 500); // This delay should match your CSS transition duration
+        };
 
-        }, 2017); // This is the GIF duration in milliseconds. Make sure it's accurate!
+        const startGifPlaybackTimer = () => {
+             // Only start the timer if the GIF actually loads successfully
+             setTimeout(transitionToFallback, 2017); // GIF duration
+        };
+
+        // Handle cases where GIF might be in browser cache
+        if (gif.complete) {
+          startGifPlaybackTimer();
+        } else {
+          gif.onload = startGifPlaybackTimer;
+          // Add onerror to handle failed GIF loads gracefully, and just show fallback
+          gif.onerror = () => {
+            console.error('Failed to load GIF, displaying static image.');
+            gif.style.display = 'none';
+            fallback.style.display = 'block';
+            void fallback.offsetWidth;
+            fallback.style.opacity = '1'; // Ensure fallback is visible
+            hasPlayed = true; // Mark as played to prevent re-attempts
+          };
+        }
       }
     });
-  }, { threshold: 0.5 }); // Adjust threshold as needed, 0.5 means 50% of the GIF is visible
+  }, { threshold: 0 }); // *** CHANGED: threshold to 0 ***
 
-  observer.observe(gif);
+  // Start observing the container element
+  observer.observe(featuresRightContainer);
 </script>
 
 
