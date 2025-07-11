@@ -81,7 +81,7 @@ img {
 body {
   font-family: 'VisbySemibold';
   background: #f8f8f8;
-  min-width: 500px;
+  min-width: 400px;
 }
 
 main {
@@ -987,7 +987,9 @@ display: inline-block;
   }
 }
 @media (max-width: 769px) {
-
+.stats{
+  margin-top:5%;
+}
   .social-icons a.insta dotlottie-player {
     width: 92% !important;
   }
