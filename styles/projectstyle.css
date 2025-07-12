@@ -452,7 +452,7 @@ h1.project-title {
 /* Shared project card class */
 .project-card-click {
   position: relative;
-  width: 35%;
+  width: 40%;
   /* Set a height for the card to ensure content can be seen */
  aspect-ratio: 1 /1.2; 
   border-radius: 12px;
