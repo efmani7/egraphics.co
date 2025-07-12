@@ -44,57 +44,129 @@
     </div>
   </nav>
   <main>
+      <div class="hero-container">
+  <img src="images/egraphics/portfolio.png" alt="" class="background-img" />
+ <h1 class="main-heading">Portfolio</h1>
+  <div class="overlay-content">
+      <div class="land-overlay-text">
+      <h1>Explore my Projects</h1>
+      <p>Creating Work That Moves Brands Forward.</p>
+    </div>
+  </div>
+</div>
     <h1 class="project-title">Stand out with purpose.<br> Lead with <span class="special-txt">style.</span></h1>
     <div class="page-descript">
-      <p>I get it—your energy is better spent building your business than stressing over design. That’s where I
-        come
-        in. I’ll handle the creative heavy lifting and deliver a strategic, iconic visual identity that grabs
+      <p>I get it your energy is better spent building your business than stressing over design. That’s where I
+        come in. I’ll handle the creative heavy lifting and deliver a strategic, iconic visual identity that grabs
         attention, draws in your ideal audience, and leaves the competition watching in envy.</p>
     </div>
     <h2 class="project-intro">My strategic design approach <span style="color:#002547;">+</span> your vision <br>
-      <span>=</span> A brand people will envy.
+      <span>=</span> A Brand Worth Talking About.
     </h2>
-    <div class="projects-row">
-      <!-- Embeaded -->
-      <div class="project-card-click">
+<div class="projects-row">
+  <!-- Embeaded -->
+  <div style="background-color:#ede6dc;" class="project-card-click">
+    <div class="flip-inner">
+      <div class="flip-front">
         <a href="embeaded.html">
-          <img src="images/embeaded/embeaded-img-link.jpg" alt="Embeaded product image">
+          <img src="images/embeaded/embeaded-img-link.jpg" alt="Embeaded front">
           <div class="overlay-text left-text">Embeaded</div>
           <div class="overlay-text right-text">View Project</div>
         </a>
       </div>
+      <div class="flip-back">
+        <a href="embeaded.html">
+          <img src="images/embeaded/logo-back.png" alt="Embeaded back">
+          <div class="overlay-text left-text">Embeaded Back</div>
+          <div class="overlay-text right-text">View Project</div>
+        </a>
+      </div>
+    </div>
+  </div>
 
-      <!-- Daily Bites -->
-      <div class="project-card-click">
+  <!-- Daily Bites -->
+  <div style="background-color:#ffad00;" class="project-card-click">
+    <div class="flip-inner">
+      <div class="flip-front">
         <a href="dailybites.html">
-          <img src="images/dailybites/dailybites-img-click.jpg" alt="Daily Bites product image">
+          <img src="images/dailybites/dailybites-img-click.jpg" alt="Daily Bites front">
           <div class="overlay-text left-text">Daily Bites</div>
           <div class="overlay-text right-text">View Project</div>
         </a>
       </div>
+      <div class="flip-back">
+        <a href="dailybites.html">
+          <img src="images/dailybites/logo-back.png" alt="Daily Bites back">
+          <div class="overlay-text left-text">Daily Bites Back</div>
+          <div class="overlay-text right-text">View Project</div>
+        </a>
+      </div>
     </div>
+  </div>
+</div>
 
-    <div class="projects-row">
-      <!-- Hotblends -->
-      <div class="project-card-click">
+<div class="projects-row">
+  <!-- Hotblends -->
+  <div style="background-color:#ff7c00;" class="project-card-click">
+    <div class="flip-inner">
+      <div class="flip-front">
         <a href="hotblends.html">
-          <img src="images/hotblends/hotblends-img-click.jpg" alt="Hot Blends product image">
+          <img src="images/hotblends/hotblends-img-click.jpg" alt="Hot Blends front">
           <div class="overlay-text left-text">Hotblends</div>
           <div class="overlay-text right-text">View Project</div>
         </a>
       </div>
+      <div class="flip-back">
+        <a href="hotblends.html">
+          <img src="images/hotblends/logo-back.png" alt="Hot Blends back">
+          <div style="color: #ffffff;" class="overlay-text left-text">Hotblends Back</div>
+          <div style="color: #ffffff;" class="overlay-text right-text">View Project</div>
+        </a>
+      </div>
+    </div>
+  </div>
 
-      <!-- PLYR -->
-      <div class="project-card-click">
+  <!-- PLYR -->
+  <div style="background-color:#a0896a;" class="project-card-click">
+    <div class="flip-inner">
+      <div class="flip-front">
         <a href="plyr.html">
-          <img src="images/plyr/plyr-img-click.jpg" alt="Player product image">
+          <img src="images/plyr/plyr-img-click.jpg" alt="PLYR front">
           <div class="overlay-text left-text">PLYR</div>
           <div class="overlay-text right-text">View Project</div>
         </a>
       </div>
+      <div class="flip-back">
+        <a href="plyr.html">
+          <img src="images/plyr/logo-back.png" alt="PLYR back">
+          <div style="color: #ffffff;" class="overlay-text left-text">PLYR Back</div>
+          <div style="color: #ffffff;" class="overlay-text right-text">View Project</div>
+        </a>
+      </div>
     </div>
+  </div>
+</div>
+
   </main>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.project-card-click');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // Optional: if you only want to animate once
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    cards.forEach(card => observer.observe(card));
+  });
+</script>
 
 
   <!--Nav Menu Script -->
@@ -160,7 +232,7 @@
   <footer class="site-footer">
     <div class="footer-top">
       <div class="footer-left">
-        <p>egraphics co.</p>
+        <p>egraphics ltd.</p>
         <p>Trinidad and Tobago</p>
         <p>Copyright egraphics co. All Rights Reserved 2025</p>
       </div>

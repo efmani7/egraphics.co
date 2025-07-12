@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flip Cards with Scroll-In Effect</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #fafafa;
+    }
+
+    .projects-row {
+      display: flex;
+      justify-content: space-around;
+      gap: 30px;
+      margin-bottom: 50px;
+      padding: 0 20px;
+      flex-wrap: wrap;
+    }
+
+    .project-card-click {
+      position: relative;
+      width: 45%;
+      max-width: 400px;
+      aspect-ratio: 3/2;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      margin-top: 15%;
+      perspective: 1000px;
+
+      /* scroll-in animation */
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .project-card-click.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .flip-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s ease;
+    }
+
+    .project-card-click:hover .flip-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-front,
+    .flip-back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      backface-visibility: hidden;
+    }
+
+    .flip-front img,
+    .flip-back img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .flip-back {
+      transform: rotateY(180deg);
+    }
+
+    .overlay-text {
+      position: absolute;
+      bottom: 1%;
+      color: #fff;
+      padding: 0.5em 1em;
+      font-family: 'VisbySemibold', sans-serif;
+      font-size: clamp(0.8rem, 2vw, 2rem);
+      z-index: 2;
+      pointer-events: none;
+      width: calc(50% - 2em);
+    }
+
+    .left-text { left: 2%; text-align: left; }
+    .right-text { right: 2%; text-align: right; }
+
+    @media (max-width: 768px) {
+      .project-card-click {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="projects-row">
+  <div class="project-card-click">
+    <div class="flip-inner">
+      <div class="flip-front">
+        <a href="embeaded.html">
+          <img src="images/embeaded/embeaded-img-link.jpg" alt="Embeaded front">
+          <div class="overlay-text left-text">Embeaded</div>
+          <div class="overlay-text right-text">View Project</div>
+        </a>
+      </div>
+      <div class="flip-back">
+        <a href="embeaded.html">
+          <img src="images/embeaded/logo-back.png" alt="Embeaded back">
+          <div class="overlay-text left-text">Embeaded Back</div>
+          <div class="overlay-text right-text">View Project</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card-click">
+    <div class="flip-inner">
+      <div class="flip-front">
+        <a href="dailybites.html">
+          <img src="images/dailybites/dailybites-img-click.jpg" alt="Daily Bites front">
+          <div class="overlay-text left-text">Daily Bites</div>
+          <div class="overlay-text right-text">View Project</div>
+        </a>
+      </div>
+      <div class="flip-back">
+        <a href="dailybites.html">
+          <img src="images/dailybites/logo-back.png" alt="Daily Bites back">
+          <div class="overlay-text left-text">Daily Bites Back</div>
+          <div class="overlay-text right-text">View Project</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="projects-row">
+  <div class="project-card-click">
+    <div class="flip-inner">
+      <div class="flip-front">
+        <a href="hotblends.html">
+          <img src="images/hotblends/hotblends-img-click.jpg" alt="Hot Blends front">
+          <div class="overlay-text left-text">Hotblends</div>
+          <div class="overlay-text right-text">View Project</div>
+        </a>
+      </div>
+      <div class="flip-back">
+        <a href="hotblends.html">
+          <img src="images/hotblends/logo-back.png" alt="Hot Blends back">
+          <div class="overlay-text left-text">Hotblends Back</div>
+          <div class="overlay-text right-text">View Project</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card-click">
+    <div class="flip-inner">
+      <div class="flip-front">
+        <a href="plyr.html">
+          <img src="images/plyr/plyr-img-click.jpg" alt="PLYR front">
+          <div class="overlay-text left-text">PLYR</div>
+          <div class="overlay-text right-text">View Project</div>
+        </a>
+      </div>
+      <div class="flip-back">
+        <a href="plyr.html">
+          <img src="images/plyr/logo-back.png" alt="PLYR back">
+          <div class="overlay-text left-text">PLYR Back</div>
+          <div class="overlay-text right-text">View Project</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.project-card-click').forEach(card => {
+      observer.observe(card);
+    });
+  });
+</script>
+
+</body>
+</html>
