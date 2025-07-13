@@ -2,9 +2,8 @@
 <html lang="en">
 
 <head>
-  <FilesMatch "\.(html|css|js|png|jpg)$">
-  Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
-</FilesMatch>
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+
 <script src="scripts/cache.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
