@@ -6,6 +6,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Brand Identity</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="styles/portfoliostyle.css" />
 <link rel="icon" href="images/egraphics/logo.png" type="image/x-icon">
 <!-- Lottie Player Component -->
@@ -129,19 +130,28 @@ Clean lines. Coded strength. A brand shaped by precision and powered by trust—
       <img src="images/terabytesolutions/logosuite.jpg" alt="">
 
 <div class="animation-tera">
-<video
-  id="scrollVideo"
-  autoplay
-  loop
-  playsinline
-  preload="auto"
->
-  <source src="images/terabytesolutions/Terabyte Solutions-EG.MP4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+  <div class="video-wrapper">
+    <video
+      id="scrollVideo"
+      autoplay
+      loop
+      muted
+      preload="auto"
+      playsinline
+    >
+      <source src="images/terabytesolutions/Terabyte Solutions-EG.MP4" type="video/mp4" />
+    </video>
 
+    <div class="custom-video-volume-controls">
+      <button id="muteUnmuteBtn">
+        <i class="fas fa-volume-up"></i>
+      </button>
+      <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5" />
+    </div>
+  </div>
 </div>
 
+      
       <div class="gif-btn-wrapper">
         <!-- Lottie Button (left) -->
         <a href="index.html">
@@ -163,20 +173,93 @@ Clean lines. Coded strength. A brand shaped by precision and powered by trust—
    <!-- Play when 60% of the video is visible -->
 <script>
   const video = document.getElementById('scrollVideo');
+const muteUnmuteBtn = document.getElementById('muteUnmuteBtn');
+const volumeSlider = document.getElementById('volumeSlider');
+const muteIcon = muteUnmuteBtn.querySelector('i'); // Get the icon element
 
-  const observer = new IntersectionObserver((entries) => {
+// Function to update the mute button icon
+function updateMuteIcon() {
+    if (video.muted || video.volume === 0) {
+        muteIcon.classList.remove('fa-volume-up', 'fa-volume-down');
+        muteIcon.classList.add('fa-volume-mute'); // Muted icon
+    } else if (video.volume < 0.5) {
+        muteIcon.classList.remove('fa-volume-up', 'fa-volume-mute');
+        muteIcon.classList.add('fa-volume-down'); // Low volume icon
+    } else {
+        muteIcon.classList.remove('fa-volume-down', 'fa-volume-mute');
+        muteIcon.classList.add('fa-volume-up'); // High volume icon
+    }
+}
+
+// --- Initial Setup and Event Listeners for Custom Controls ---
+
+// Set initial state of the volume slider and icon once video metadata is loaded
+video.addEventListener('loadedmetadata', () => {
+    volumeSlider.value = video.volume;
+    updateMuteIcon();
+});
+
+// Update button icon and slider when video's muted state or volume changes
+video.addEventListener('volumechange', () => {
+    volumeSlider.value = video.volume; // Sync slider with actual volume
+    updateMuteIcon(); // Update icon based on new volume/mute state
+});
+
+// Mute/Unmute button click handler
+muteUnmuteBtn.addEventListener('click', () => {
+    if (video.muted) {
+        video.muted = false; // Unmute
+        video.volume = volumeSlider.value === 0 ? 0.5 : volumeSlider.value; // Restore volume or set to default
+    } else {
+        video.muted = true; // Mute
+    }
+    // The 'volumechange' event listener will handle updating button icon and slider
+    if (!video.muted && video.paused) {
+        // If unmuted and video is paused, attempt to play (browser policies might still block)
+        video.play().catch(error => {
+            console.warn("Attempt to play on unmute failed:", error);
+        });
+    }
+});
+
+// Volume slider input handler
+volumeSlider.addEventListener('input', () => {
+    video.volume = volumeSlider.value; // Set video volume directly
+    video.muted = video.volume === 0; // Automatically mute if slider goes to 0
+    // The 'volumechange' event listener will handle updating button icon
+});
+
+
+// --- Your existing IntersectionObserver Logic ---
+
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        video.play();
-      } else {
-        video.pause();
-      }
+        if (entry.isIntersecting) {
+            // If the video is paused, try to play it
+            if (video.paused) {
+                video.play().then(() => {
+                    // Playback initiated successfully.
+                    // If you want it to unmute automatically when in view (and played),
+                    // video.muted = false; // Be aware of browser policies.
+                }).catch(error => {
+                    console.log('Video auto-play on scroll failed (likely browser policy):', error);
+                });
+            }
+        } else {
+            // When out of view, pause and mute the video
+            if (!video.paused) {
+                video.pause();
+            }
+            video.muted = true; // Always mute when out of view
+            volumeSlider.value = 0; // Sync slider
+            updateMuteIcon(); // Update icon to muted
+        }
     });
-  }, {
-    threshold: 0.6, // Play when 60% of the video is visible
-  });
+}, {
+    threshold: 0.6,
+});
 
-  observer.observe(video);
+observer.observe(video);
 </script>
 
 

@@ -80,14 +80,7 @@ img {
 }
 
 video{
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  pointer-events: none;
-  -webkit-user-drag: none;
+  
 }
 body {
   font-family: 'VisbySemibold';
@@ -300,22 +293,121 @@ main {
   background-color: #333;
   color: #fff;
 }
+/* Container for the video - enables centering */
 .animation-tera {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;         /* Full width for centering */
-  margin: 2rem 0;       /* Optional: space above and below */
+  width: 100%;
+  margin: 2rem 0;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+/* Video element styling */
+.animation-tera video {
+    border-radius: 5px; /* Rounded corners for the video */
+    width: 50%; /* Responsive width: min 280px, preferred 60% of viewport width, max 600px */
+    height: auto;             /* Maintain aspect ratio */
+    display: block;           /* Remove extra space below */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
+   
+}
+.video-wrapper {
+  position: relative;
+  width: 300px; /* Match video width or set desired fixed size */
 }
 
-.animation-tera video {
-  border-radius: 2em;
-  width: 25%;
-  max-width:25%;
+.video-wrapper video {
+  width: 100%;
   height: auto;
   display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+/* Custom Volume Controls Container */
+.custom-video-volume-controls {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 8px 12px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+  opacity: 0.2;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
+/* Show controls on hover */
+.video-wrapper:hover .custom-video-volume-controls {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* Show controls on hover */
+.animation-tera:hover .custom-video-volume-controls {
+    opacity: 1;
+    pointer-events: auto; /* Make them clickable again */
+}
+
+/* Style for the Mute/Unmute button */
+.custom-video-volume-controls button {
+    background: #555; /* Darker button background */
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+    /* Center the icon within the button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the icon inside the button */
+.custom-video-volume-controls button i {
+    font-size: 1.2em; /* Adjust icon size */
+}
+
+/* Style for the Volume Slider */
+.custom-video-volume-controls input[type="range"] {
+    -webkit-appearance: none; /* Remove default WebKit styling */
+    appearance: none;
+    width: 100px; /* Adjust slider width */
+    height: 6px;
+    background: #ddd; /* Track color */
+    outline: none;
+    border-radius: 3px;
+    transition: opacity .2s;
+    opacity: 0.8;
+}
+
+/* Style for the slider thumb (handle) */
+.custom-video-volume-controls input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #ffffff; /* Thumb color */
+    cursor: pointer;
+}
+
+/* For Firefox compatibility */
+.custom-video-volume-controls input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
 /* ================================================ FOOTER ================================================ */
 
 .site-footer {
