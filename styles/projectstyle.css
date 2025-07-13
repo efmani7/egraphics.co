@@ -440,6 +440,10 @@ h1.project-title {
   color: #d60029;
 
 }
+.proj-cards{
+    padding-bottom:8%;
+    margin-top: 5%;
+}
 .projects-row {
   display: flex;
   flex-wrap: wrap;
@@ -447,23 +451,24 @@ h1.project-title {
   align-items: flex-start;
   padding: 0 5%;
   gap: 1rem;
-}
+ }
 
 /* Shared project card class */
 .project-card-click {
   position: relative;
-  width: 40%;
+  width: 35%;
   /* Set a height for the card to ensure content can be seen */
  aspect-ratio: 1 /1.2; 
   border-radius: 12px;
   overflow: hidden;
-  background-color: #eee7dd;
+  background-color:none;
   opacity: 0;
   transform: translateY(20px);
   transition: transform 0.3s ease, opacity 0.6s ease;
   cursor: pointer;
   margin-top:5%;
   perspective: 1000px;
+
 }
 
 /* Inner wrapper for 3D flip */
@@ -472,7 +477,7 @@ h1.project-title {
   height: 100%; /* Make sure inner takes full height of parent */
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.8s ease;
+  transition: transform 0.5s ease;
 }
 
 /* Flip on hover */
@@ -496,6 +501,8 @@ h1.project-title {
    aspect-ratio: 1 /1.2;
   object-fit: cover;
   display: block;
+  border-radius: 12px;
+
 }
 
 .flip-back {
