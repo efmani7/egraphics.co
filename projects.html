@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <FilesMatch "\.(html|css|js|png|jpg)$">
+  Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+</FilesMatch>
+<script src="scripts/cache.js"></script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Portfoilio</title>
@@ -147,6 +152,30 @@
     </div>
   </div>
 </div>
+
+<div class="projects-row">
+
+  <!-- Terabyte -->
+  <div class="project-card-click">
+    <div class="flip-inner">
+      <div class="flip-front">
+        <a href="terabtyesolutions.html">
+          <img src="images/terabytesolutions/terabyte-img-click.jpg" alt="Hot Blends front">
+          <div style="color: #ffffff;" class="overlay-text left-text">Terabyte Solutions</div>
+          <div style="color: #ffffff;" class="overlay-text right-text">View Project</div>
+        </a>
+      </div>
+      <div class="flip-back">
+        <a href="terabtyesolutions.html">
+          <img src="images/terabytesolutions/terabyte-img-back.jpg" alt="Hot Blends back">
+      
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 </section>
   </main>
 

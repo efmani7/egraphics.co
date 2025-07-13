@@ -78,6 +78,17 @@ img {
   pointer-events: none;
   -webkit-user-drag: none;
 }
+
+video{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
 body {
   font-family: 'VisbySemibold';
   background: #f8f8f8;
@@ -288,6 +299,21 @@ main {
 .see-more-btn:hover {
   background-color: #333;
   color: #fff;
+}
+.animation-tera {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;         /* Full width for centering */
+  margin: 2rem 0;       /* Optional: space above and below */
+}
+
+.animation-tera video {
+  border-radius: 2em;
+  width: 25%;
+  max-width:25%;
+  height: auto;
+  display: block;
 }
 
 /* ================================================ FOOTER ================================================ */
