@@ -253,7 +253,7 @@ h1.home-title {
   font-size: clamp(4rem, 6vw, 8rem);
   font-weight: 800;
   text-align: left;
-  text-shadow: 0 0 20px rgba(0,0,0,0.7);
+  text-shadow: 0 0 20px rgba(0,0,0,0.1);
   z-index: 5;
   margin: 0;
   padding: 0 1rem;

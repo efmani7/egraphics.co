@@ -451,14 +451,14 @@ h1.project-title {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 0 5%;
+  padding: 0 2%;
   gap: 1rem;
  }
 
 /* Shared project card class */
 .project-card-click {
   position: relative;
-  width: 35%;
+  width: 45%;
   /* Set a height for the card to ensure content can be seen */
  aspect-ratio: 1 /1.2; 
   border-radius: 12px;
