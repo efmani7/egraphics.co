@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
-
   document.querySelectorAll('img').forEach(img => {
   // Disable dragging
   img.setAttribute('draggable', 'false');
@@ -60,9 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault(); // Cancel long press menu
     }, 300); // Adjust time if needed
   });
-
   img.addEventListener('touchend', () => clearTimeout(img.longPressTimer));
   img.addEventListener('touchmove', () => clearTimeout(img.longPressTimer));
 });
-
 });
